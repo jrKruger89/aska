@@ -1,0 +1,42 @@
+// ========== root variables ==========
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap");
+
+$primary-black: #000000;
+$secondary-black: #222222;
+$primary-white: #f0f0f0;
+$secondary-dark-green: #464f41;
+$primary-dark-green: #56776b;
+$primary-green: #557e54;
+$primary-light-green: #bfcba8;
+
+$primary-heading: "Playfair Display", serif;
+$primary-text: "Abel", sans-serif;
+
+// ========== css reset ==========
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  height: 100%;
+}
+// ========== general styling ==========
+@mixin headers {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $primary-heading;
+  }
+}
+
+p {
+  font-family: $primary-text;
+}
+
+// ========== index page ==========
