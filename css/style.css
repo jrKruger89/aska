@@ -1,48 +1,105 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap");
+
+:root {
+  --primary-black: #000000;
+  --secondary-black: #222222;
+  --primary-white: #f0f0f0;
+  --secondary-dark-green: #464f41;
+  --primary-dark-green: #56776b;
+  --primary-green: #557e54;
+  --primary-light-green: #bfcba8;
+  --shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+
+  --primary-heading: "Playfair Display", serif;
+  --primary-text: "Abel", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 100%;
   height: 100%;
 }
-
+/*========= GENERAL ========= */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--primary-heading);
   text-align: center;
 }
 
 p {
-  font-family: "Abel", sans-serif;
+  font-family: var(--primary-text);
 }
 
 a {
-  color: #000000;
-  font-family: "Abel", sans-serif;
+  color: var(--primary-black);
+  font-family: var(--primary-text);
   text-decoration: none;
 }
 
 .page-padding {
   padding: 120px 20px 20px 20px;
 }
-
+.whitespace {
+  height: 25px;
+}
 .button1 {
   border-radius: 20px;
+  width: 170px;
+  height: 45px;
+  font-family: var(--primary-heading);
+  font-size: 20px;
+  border: none;
+  box-shadow: var(--shadow);
+}
+.button2 {
   width: 150px;
-  height: 35px;
-  font-family: "Playfair Display", serif;
-  font-size: 50px;
+  height: 170px;
+  font-family: var(--primary-heading);
+  font-size: 20px;
+  border: none;
+  box-shadow: var(--shadow);
+}
+.button3 {
+  width: 160px;
+  height: 70px;
+  font-family: var(--primary-heading);
+  font-size: 16px;
+  border: none;
+  box-shadow: var(--shadow);
+  background-color: #557e54b8;
+  color: var(--primary-white);
+}
+.green {
+  color: var(--primary-white);
+  background-color: var(--primary-green);
+}
+.dark-green {
+  color: var(--primary-white);
+  background-color: var(--primary-dark-green);
+}
+.dark-green2 {
+  color: var(--primary-white);
+  background-color: var(--secondary-dark-green);
+}
+.light-green {
+  color: var(--primary-white);
+  background-color: var(--primary-light-green);
+}
+.white {
+  color: var(--primary-white);
 }
 
+/*========= MENU ========= */
 .burger {
   width: 40px;
   position: absolute;
@@ -52,7 +109,7 @@ a {
 }
 
 .line {
-  background-color: #222222;
+  background-color: var(--secondary-black);
   height: 3px;
   width: 40px;
   border-radius: 15px;
@@ -67,29 +124,30 @@ a {
 /* Rotate first bar */
 .open .line1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 10px);
-          transform: rotate(-45deg) translate(-9px, 10px);
-  background-color: #222222;
+  transform: rotate(-45deg) translate(-9px, 10px);
+  background-color: var(--secondary-black);
 }
 
 /* Fade out the second bar */
 .open .line2 {
   opacity: 0;
-  background-color: #222222;
+  background-color: var(--secondary-black);
 }
 
 /* Rotate last bar */
 .open .line3 {
   -webkit-transform: rotate(45deg) translate(-9px, -9px);
-          transform: rotate(45deg) translate(-9px, -9px);
-  background-color: #222222;
+  transform: rotate(45deg) translate(-9px, -9px);
+  background-color: var(--secondary-black);
 }
 
 header {
-  background-color: white;
+  background-color: var(--primary-white);
   position: fixed;
   top: 0;
   width: 100vw;
   height: 75px;
+  z-index: 999;
 }
 
 .logo {
@@ -103,7 +161,7 @@ header {
 .divider {
   position: absolute;
   top: 68.5px;
-  background-color: #557e54;
+  background-color: var(--primary-green);
   width: 100vw;
   height: 6px;
 }
@@ -111,42 +169,34 @@ header {
 .nav-list {
   display: none;
   text-align: center;
-  background: white;
+  background: var(--primary-white);
   padding: 100px 0 0 0;
   height: 340px;
 }
 
 .nav-link {
-  font-family: "Playfair Display", serif;
+  font-family: var(--primary-heading);
   font-size: 1.4em;
   margin: 15px 15px 0 15px;
-  border-bottom: 1px solid #557e54;
+  border-bottom: 1px solid var(--primary-green);
 }
 
 .menu-open {
   display: block;
 }
-
-.frontpage-hero {
-  background-image: url(../images/hero1.jpg);
-  background-position: center;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
+/*========= FOOTER ========= */
 footer {
-  border-top: 5px solid #557e54;
+  border-top: 5px solid var(--primary-green);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 footer section {
@@ -155,8 +205,8 @@ footer section {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: center;
   margin: 20px 0 10px 0;
 }
@@ -164,7 +214,105 @@ footer section {
 .copyright {
   text-align: center;
 }
+/*========= INDEX ========= */
+.frontpage-hero {
+  background-image: url(../images/hero1.jpg);
+  background-position: center;
+  height: 80vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+}
 
+.hero-wrapper {
+  position: relative;
+  z-index: -1;
+  height: 650px;
+}
+.hero-text {
+  margin-bottom: 20px;
+}
+.button-section {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 40vw);
+  overflow: scroll;
+  gap: 40px;
+  scroll-snap-type: x mandatory;
+  position: relative;
+  top: -80px;
+}
+.button-section::-webkit-scrollbar {
+  display: none;
+}
+.btn-text1 {
+  font-family: var(--primary-heading);
+  font-size: 50px;
+}
+.btn-text2 {
+  font-family: var(--primary-heading);
+  font-size: 30px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px 0px;
+  text-align: center;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ostanlaegget teigar-rideudstyr"
+    "klubdage staevner"
+    "pet-house saxild";
+}
+.grid-img {
+  background-position: center;
+  height: 160px;
+  width: 160px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: flex-end;
+}
+
+.ostanlaegget {
+  grid-area: ostanlaegget;
+  background-image: url(../images/fav_icon.svg);
+}
+
+.teigar-rideudstyr {
+  grid-area: teigar-rideudstyr;
+  background-image: url(../images/fav_icon.svg);
+}
+
+.klubdage {
+  grid-area: klubdage;
+  background-image: url(../images/fav_icon.svg);
+}
+
+.staevner {
+  grid-area: staevner;
+  background-image: url(../images/fav_icon.svg);
+}
+
+.pet-house {
+  grid-area: pet-house;
+  background-image: url(../images/fav_icon.svg);
+}
+
+.saxild {
+  grid-area: saxild;
+  background-image: url(../images/fav_icon.svg);
+}
+
+/*========= RESPONSIVE ========= */
 @media screen and (min-width: 1024px) {
   .burger {
     display: none;
@@ -186,8 +334,8 @@ footer section {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
   .nav-link {
     font-size: 1.8em;
@@ -199,18 +347,55 @@ footer section {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
   .contact {
     -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
   }
   .quick-links {
     -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+  /*========= RESPONSIVE - INDEX ========= */
+  .container {
+    display: grid;
+    padding: 40px;
+    width: 70%;
+    margin: auto;
+    height: 80vh;
+    grid-template-columns: 1.1fr 0.9fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas:
+      "ostanlaegget teigar-rideudstyr klubdage klubdage"
+      "ostanlaegget staevner staevner pet-house"
+      "ostanlaegget saxild saxild pet-house"
+      "ostanlaegget saxild saxild pet-house";
+  }
+  .grid-img {
+    width: 100%;
+    height: 100%;
+  }
+  .ostanlaegget {
+    grid-area: ostanlaegget;
+  }
+  .klubdage {
+    grid-area: klubdage;
+  }
+  .staevner {
+    grid-area: staevner;
+  }
+  .teigar-rideudstyr {
+    grid-area: teigar-rideudstyr;
+  }
+  .saxild {
+    grid-area: saxild;
+  }
+  .pet-house {
+    grid-area: pet-house;
   }
 }
-/*# sourceMappingURL=style.css.map */
