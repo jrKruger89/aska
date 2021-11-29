@@ -31,8 +31,16 @@ a {
   text-decoration: none;
 }
 
-main {
-  margin: 130px 0 0 0;
+.page-padding {
+  padding: 120px 20px 20px 20px;
+}
+
+.button1 {
+  border-radius: 20px;
+  width: 150px;
+  height: 35px;
+  font-family: "Playfair Display", serif;
+  font-size: 50px;
 }
 
 .burger {
@@ -81,27 +89,31 @@ header {
   position: fixed;
   top: 0;
   width: 100vw;
+  height: 75px;
 }
 
 .logo {
-  margin: 4px;
+  margin: 5px;
   width: 175px;
-  height: 100%;
-  position: relative;
+  height: 100px;
+  position: absolute;
   z-index: 3;
 }
 
 .divider {
   position: absolute;
-  top: 75px;
+  top: 68.5px;
   background-color: #557e54;
   width: 100vw;
-  height: 5px;
+  height: 6px;
 }
 
 .nav-list {
   display: none;
   text-align: center;
+  background: white;
+  padding: 100px 0 0 0;
+  height: 340px;
 }
 
 .nav-link {
@@ -113,6 +125,14 @@ header {
 
 .menu-open {
   display: block;
+}
+
+.frontpage-hero {
+  background-image: url(../images/hero1.jpg);
+  background-position: center;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 footer {
