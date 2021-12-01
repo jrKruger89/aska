@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="images/fav_icon.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style.css" />
+
     <title>Forside | ASKA</title>
 
     <!-- slick slider -->
@@ -20,12 +20,13 @@
       rel="stylesheet"
     />
     <!-- slick slider slut -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-------------- Navigation -------------->
     <header>
       <a href="#"
-        ><img src="images/fav_icon.svg" alt="ASKA logo" class="logo"
+        ><img src="images/logo_aska.svg" alt="ASKA logo" class="logo"
       /></a>
       <div class="divider"></div>
       <div class="burger" onclick="toggleMenu()">
@@ -41,8 +42,8 @@
           <a href="pages/bliv-en-del-af-aska.html"
             ><li class="nav-link">Bliv en del af ASKA</li></a
           >
-          <a href="pages/aska-ungdom.html"
-            ><li class="nav-link">ASKA Ungdom</li></a
+          <a href="pages/aska-staevner.html"
+            ><li class="nav-link">ASKA Stævner</li></a
           >
         </ul>
       </nav>
@@ -50,10 +51,34 @@
     <main>
       <h1></h1>
       <div class="hero-wrapper">
-        <section class="frontpage-hero">
+        <section class="frontpage-hero hero1" onload="showSlide('0')">
           <div class="page-padding">
-            <p class="hero-text white"></p>
-            <button class="hero-read-more button1 green">Læs mere</button>
+            <p class="hero-text white">111111111</p>
+            <a href=""
+              ><button id="hero-btn" class="hero-read-more button1 green">
+                111111111
+              </button></a
+            >
+          </div>
+        </section>
+        <section class="frontpage-hero hero2" onload="showSlide('1')">
+          <div class="page-padding">
+            <p class="hero-text white">222222222</p>
+            <a href=""
+              ><button id="hero-btn" class="hero-read-more button1 green">
+                222222222
+              </button></a
+            >
+          </div>
+        </section>
+        <section class="frontpage-hero hero3" onload="showSlide('2')">
+          <div class="page-padding">
+            <p class="hero-text white">333333333</p>
+            <a href=""
+              ><button id="hero-btn" class="hero-read-more button1 green">
+                333333333
+              </button></a
+            >
           </div>
         </section>
       </div>
@@ -82,6 +107,7 @@
         <h2>Medlemsfordele</h2>
         <div class="whitespace"></div>
         <div class="container2">
+          <!------ Østanlægget -------->
           <div class="ostanlaegget grid-img">
             <button
               onclick="document.getElementById('modal').style.display='block'"
@@ -99,22 +125,28 @@
                   onclick="document.getElementById('modal').style.display='none'"
                   >&times;</span
                 >
-                <h3>
-                  50% <br />
-                  Ridekort til Østanlægget
-                </h3>
               </div>
+              <h3>
+                50% <br />
+                Ridekort til Østanlægget
+              </h3>
+
               <div class="line4"></div>
-              <p>
-                Send din dokumentation for medlemsskab af ASKA til
-                vilhelmsborg@vilhelmsborg.dk - husk at skrive navn, adresse,
-                telf.nr. og om kortet skal gælde i 6 mdr. og 1 år. Efter
-                betaling senden dokumentation herfor ligeledes til Vilhelmsborg.
-                Læs mere om regler for brug af banerne på www.vilhelmsborg.dk
+              <p class="modal-text-p">
+                ASKA har indgået samarbejde med Vilhelmsborg om køb af ridekort
+                til Østanlægget (ovalbane, opvarmningsbaner og pas-spor) på
+                Vilhelmsborg. Alle ASKA-medlemmer får 50% rabat på kort dertil.
+                <br /><br />
+                Det eneste, du skal gøre, er at sende dokumentation for
+                medlemskab af ASKA samt dit navn, adresse, telefonnummer og
+                skrive, om kortet skal gælde for 6 måneder eller 1 år. Du skal
+                skrive til: vilhelmsborg@vilhelmsborg.dk. Du skal også
+                dokumentere din betaling via overførsel til VB's konto. Se
+                regler for brug af banerne på vilhelmsborg.dk.
               </p>
             </div>
           </div>
-          <!------ -------->
+          <!------  Teigar -------->
           <div class="teigar-rideudstyr grid-img">
             <button
               onclick="document.getElementById('modal2').style.display='block'"
@@ -132,31 +164,30 @@
                   onclick="document.getElementById('modal2').style.display='none'"
                   >&times;</span
                 >
-                <h3>
-                  10%<br />
-                  Teigar Rideudstyr
-                </h3>
               </div>
+              <h3>
+                10%<br />
+                Teigar Rideudstyr
+              </h3>
+
               <div class="line4"></div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <p class="modal-text-p">
+                Vi har en samarbejdsaftale med Teigar Rideudstyr, som betyder,
+                at vi får 10 pct. rabat i butikken og på webshoppen, hver gang
+                vi handler rideudstyr. Du skal blot oplyse medlemsnummer, når du
+                køber. Rabatten gælder ikke på sadler, foder, bøger og dvd’er
+                samt i forvejen nedsatte varer.
               </p>
             </div>
           </div>
-          <!------ -------->
+          <!------  Gratis benyttelse af faciliteter på klubdage -------->
           <div class="klubdage grid-img">
             <button
               onclick="document.getElementById('modal3').style.display='block'"
               class="button3"
             >
-              Gratis benyttelse <br />
-              af faciliteter på klubdage
+              Gratis brug af Vilhelmsborgs<br />
+              faciliteter på klubdage
             </button>
           </div>
           <div id="modal3" class="modal">
@@ -166,25 +197,41 @@
                   onclick="document.getElementById('modal3').style.display='none'"
                   >&times;</span
                 >
-                <h3>
-                  Gratis benyttelse <br />
-                  af faciliteter på klubdage
-                </h3>
               </div>
+              <h3>
+                Gratis brug af Vilhelmsborgs<br />
+                faciliteter på klubdage
+              </h3>
+
               <div class="line4"></div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <p class="modal-text-p">
+                Vi holder jævnligt klubdage på Vilhelmsborg, hvor medlemmer
+                gratis kan benytte, de baner – og om vinteren ridehallen – som
+                ASKA har lejet til dagen. Klubdagene arrangeres af bestyrelsen
+                og annonceres via facebook. Klubdagene er tænkt som dage, hvor
+                ASKA’s medlemmer har mulighed for at mødes. Her er der plads til
+                alle medlemmer, store som små, med eller uden hest. Vi ønsker
+                med klubdagene at skabe gode anledninger til at mødes omkring
+                vores fælles interesse, den islandske hest, sludre, få råd, og
+                hvem ved måske gøre nye bekendtskaber.
+                <br /><br />
+                Klubdagene afholdes løbende, og vi bestræber os på at holde 8
+                årlige klubdage på Vilhelmsborg. Når årstiden tillader det, er
+                vi på ovalbanen, og i de koldere måneder rykker vi ind i
+                ridehallen (den gule hal).
+                <br /><br />
+                På de fleste klubdage udbydes en form for arrangement med
+                tilmelding. Det kan være forskellige former for undervisning,
+                sjove aktiviteter med hestene, eller det kan være et af vores
+                udvalg, der står for noget særligt. <br />
+                Datoer for klubdage kan du se her på hjemmesiden i ASKA’s
+                kalender og på facebook - og de særlige arrangementer i
+                forbindelse med klubdage annonceres på facebook.
               </p>
             </div>
           </div>
 
-          <!------ -------->
+          <!------ Reduceret pris til ASKA's egne stævner -------->
           <div class="staevner grid-img">
             <button
               onclick="document.getElementById('modal4').style.display='block'"
@@ -202,25 +249,21 @@
                   onclick="document.getElementById('modal4').style.display='none'"
                   >&times;</span
                 >
-                <h3>
-                  Reduceret pris til <br />
-                  ASKA's egne stævner
-                </h3>
               </div>
+              <h3>
+                Reduceret pris til <br />
+                ASKA's egne stævner
+              </h3>
+
               <div class="line4"></div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <p class="modal-text-p">
+                Rabatten fremgår på det enkelte stævne/arrangement. Medlemmer
+                kan ofte også tilmelde sig før ikke-medlemmer.
               </p>
             </div>
           </div>
 
-          <!------ -------->
+          <!------  Pet House Danmark -------->
           <div class="pet-house grid-img">
             <button
               onclick="document.getElementById('modal5').style.display='block'"
@@ -238,25 +281,23 @@
                   onclick="document.getElementById('modal5').style.display='none'"
                   >&times;</span
                 >
-                <h3>
-                  10% <br />
-                  Pet House Danmark
-                </h3>
               </div>
+              <h3>
+                10% <br />
+                Pet House Danmark
+              </h3>
+
               <div class="line4"></div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <p class="modal-text-p">
+                Vi har ligeså indgået en samarbejdsaftale med Pet House Danmark
+                i Odder, som betyder, at vi får 10 pct. rabat ved køb af foder.
+                Pet House har et stort udvalg af forskellige mærker hestefoder.
+                Husk også her at oplyse medlemsnummer.
               </p>
             </div>
           </div>
 
-          <!------ -------->
+          <!------ Saxild Naturfoder -------->
           <div class="saxild grid-img">
             <button
               onclick="document.getElementById('modal6').style.display='block'"
@@ -273,20 +314,17 @@
                   onclick="document.getElementById('modal6').style.display='none'"
                   >&times;</span
                 >
-                <h3>
-                  10% <br />
-                  Saxild Naturfoder
-                </h3>
               </div>
+              <h3>
+                10% <br />
+                Saxild Naturfoder
+              </h3>
+
               <div class="line4"></div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <p class="modal-text-p">
+                Alle ASKA medlemmer får 10 pct. på alle køb hos Saxild
+                Naturfoder. Du skal blot henvende dig til Per inden bestilling.
+                Se det store udvalg på saxild-naturfoder.dk
               </p>
             </div>
           </div>
@@ -334,46 +372,57 @@
         <div class="whitespace"></div>
         <div class="sponsor_logo_container">
           <section class="sponsor-logos slider">
+            <!------ () -------->
             <div class="slide">
               <img
                 src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"
               />
             </div>
+            <!------ () -------->
             <div class="slide">
               <img
                 src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"
               />
             </div>
+            <!------ () -------->
             <div class="slide">
               <img
                 src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"
               />
             </div>
+            <!------ () -------->
             <div class="slide">
               <img
                 src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"
               />
             </div>
+            <!------ () -------->
             <div class="slide">
               <img
                 src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"
               />
             </div>
+            <!------ () -------->
             <div class="slide">
               <img
                 src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"
               />
             </div>
+            <!------ () -------->
             <div class="slide">
               <img
                 src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"
               />
             </div>
+            <!------ () -------->
             <div class="slide">
               <img
                 src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"
               />
             </div>
+            <!------ (NYE SPONSORER TILFØJES HER) -------->
+
+            <!-------------->
           </section>
         </div>
         <div class="whitespace"></div>
@@ -421,6 +470,7 @@
             >Bestil klubtøj</a
           >
           <a href="" class="quick-link">Tilmeld nyhedsbrev</a>
+          <a href="" class="quick-link">For administrator</a>
         </section>
       </div>
       <h6 class="copyright">
@@ -428,7 +478,8 @@
         rights reserved.
       </h6>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
+
     <div id="fb-root"></div>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
   </body>

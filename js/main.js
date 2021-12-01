@@ -1,7 +1,9 @@
 "use strict";
 
+import Event from "./event-service.js";
+let _event = new Event();
 /**
- * Toggle mewnu for mobile devices
+ * Toggle menu for mobile devices
  */
 const burger = document.querySelector(".burger");
 let navlist = document.querySelector(".nav-list");
@@ -11,7 +13,13 @@ let toggleMenu = () => {
   navlist.classList.toggle("menu-open");
 };
 
-document.querySelector(".button-section").scrollLeft = 90;
+window.toggleMenu = () => toggleMenu();
+
+try {
+  document.querySelector(".button-section").scrollLeft = 90;
+} catch (error) {
+  console.error();
+}
 
 /* slick slider*/
 $(document).ready(function () {
@@ -40,43 +48,47 @@ $(document).ready(function () {
   });
 });
 
-let heroSlides = [
-  {
-    img_url: "../images/hero1.jpg",
-    p_text: "Lorem ipsum 1",
-    button: "Læs mere",
-  },
-  {
-    img_url: "../images/map.svg",
-    p_text: "Lorem ipsum 2",
-    button: "Læs mere",
-  },
-  {
-    img_url: "../images/fav_icon.svg",
-    p_text: "Lorem ipsum 3",
-    button: "Læs mere",
-  },
-];
+// Hero Slider
 
-let img = document.querySelector(".frontpage-hero");
-let p = document.querySelector(".hero-text");
-let button = document.querySelector(".hero-read-more");
+let slideSections;
+let activeSlide = 0;
 
-let heroSlider = () => {
-  let i = 0;
-  img.style.backgroundImage = `url(${heroSlides[2]["img_url"]})`;
-  p.innerHTML = heroSlides[2]["p_text"];
+document.addEventListener("DOMContentLoaded", () => {
+  slideSections = document.querySelectorAll(".frontpage-hero");
+  showSlide(1);
+  setInterval(() => setActiveSlide(), 10000);
+});
 
-  setInterval(() => {
-    // If we've reached the end of the array...
-    if (i >= heroSlides.length) {
-      i = 0;
-    }
-    img.style.backgroundImage = `url(${heroSlides[i]["img_url"]})`;
-    p.innerHTML = heroSlides[i]["p_text"];
-
-    i++; // Sete the path to the current counter and then increase the counter
-  }, 10000);
+/**
+ * Hiding all slideSections
+ */
+let hideAllSlideSections = () => {
+  for (const slideSection of slideSections) {
+    slideSection.style.display = "none";
+  }
 };
 
-heroSlider();
+/**
+ * displaying a slide section by given index
+ */
+let showSlide = (index) => {
+  hideAllSlideSections(); // start by hiding all slides sections
+  activeSlide = index;
+  slideSections[activeSlide].style.display = "flex"; // display slide section by activeSlide number
+};
+
+/**
+ * Chaning and displaying the active slide section
+ * - changing the global variable activeSlide and display the new active slideSection
+ */
+let setActiveSlide = () => {
+  if (activeSlide < slideSections.length - 1) {
+    // checking if activeSlide is lower than the number of slide sections
+    activeSlide++; // incrementing activeSlide number (+1)
+  } else {
+    // if not, change the activeSlide back to the first one
+    activeSlide = 0;
+  }
+  hideAllSlideSections(); //hide all slides
+  slideSections[activeSlide].style.display = "flex"; // display slide section by activeSlide number
+};
