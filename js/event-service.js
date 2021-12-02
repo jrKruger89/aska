@@ -26,21 +26,85 @@ export default class Event {
         event.id = doc.id;
         return event;
       });
-      this.appendUsers(this.events);
+      this.appendEvents(this.events);
       console.log(this.events);
+      this.filterEvents("Foredrag og kursus");
     });
   }
 
+  //var stævner = myArray.filter(category => category.includes('stævner'))
+
+  /*
+  let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+
+/**
+ * Filter array items based on search criteria (query)
+ */ /*
+function filterItems(arr, query) {
+  return arr.filter(function(el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  })
+}
+*/ /*
+console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
+console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
+*/
+
   // append users to the DOM
-  appendUsers(events) {
+  appendEvents(events) {
     let htmlTemplate = "";
     for (const event of events) {
       htmlTemplate += /*html*/ `
     <article>
-      <h3>${event.name}</h3>
+      <p>${event.date}</p>
+      <div class="whitespace"></div>
+      <p>${event.name}</p>
+      <div class="whitespace"></div>
+      <button class="button4 dark-green" onclick="showDetailView('${event.id}')">Læs mere & tilmeld</button>
     </article>
     `;
     }
-    document.querySelector(".calender").innerHTML = htmlTemplate;
+
+    document.querySelector("#content").innerHTML = htmlTemplate;
   }
+
+  filterEvents() {
+    document.addEventListener("change", () => {
+      const checkedValues = [...document.querySelectorAll(".eventCheckBox")]
+        .filter((input) => input.checked)
+        .map((input) => input.value);
+      const result = this.events.filter((item) => {
+        if (item.category.some((tag) => tag == checkedValues)) {
+          return item;
+        }
+      });
+      this.appendEvents(result);
+      if (checkedValues.length < 1) {
+        this.appendEvents(this.events);
+      }
+    });
+  }
+}
+
+// sort by category
+function orderBy(value) {
+  if (value === "name") {
+    sortByName();
+  } else if (value === "year") {
+    sortByYear();
+  }
+}
+
+function sortByName() {
+  _movies.sort((movie1, movie2) => {
+    return movie1.title.rendered.localeCompare(movie2.title.rendered);
+  });
+  appendMovies(_movies);
+}
+
+function sortByYear() {
+  _movies.sort((movie1, movie2) => {
+    return movie1.acf.year.localeCompare(movie2.acf.year);
+  });
+  appendMovies(_movies);
 }

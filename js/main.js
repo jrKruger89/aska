@@ -21,7 +21,7 @@ try {
   console.error();
 }
 
-/* slick slider*/
+/* sponsor slider */
 $(document).ready(function () {
   $(".sponsor-logos").slick({
     slidesToShow: 6,
@@ -55,6 +55,7 @@ let activeSlide = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
   slideSections = document.querySelectorAll(".frontpage-hero");
+
   showSlide(1);
   setInterval(() => setActiveSlide(), 10000);
 });
@@ -71,16 +72,17 @@ let hideAllSlideSections = () => {
 /**
  * displaying a slide section by given index
  */
+
 let showSlide = (index) => {
   hideAllSlideSections(); // start by hiding all slides sections
   activeSlide = index;
   slideSections[activeSlide].style.display = "flex"; // display slide section by activeSlide number
 };
-
 /**
  * Chaning and displaying the active slide section
  * - changing the global variable activeSlide and display the new active slideSection
  */
+
 let setActiveSlide = () => {
   if (activeSlide < slideSections.length - 1) {
     // checking if activeSlide is lower than the number of slide sections

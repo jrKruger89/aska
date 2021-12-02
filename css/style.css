@@ -28,22 +28,48 @@ main {
   background-color: var(--primary-white);
 }
 /* ==================================== GENERAL ==================================== */
-h1,
+h1 {
+  display: none;
+}
+h6 {
+  font-family: var(--primary-heading);
+  font-size: 12px;
+}
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
   font-family: var(--primary-heading);
-  text-align: center;
+  font-size: 20px;
+}
+@media screen and (min-width: 750px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 25px;
+  }
 }
 p {
   font-family: var(--primary-text);
+  font-size: 15px;
+}
+@media screen and (min-width: 750px) {
+  p {
+    font-size: 17px;
+  }
 }
 a {
   color: var(--primary-black) !important;
   font-family: var(--primary-text);
   text-decoration: none;
+  font-size: 15px;
+}
+@media screen and (min-width: 750px) {
+  a {
+    font-size: 17px;
+  }
 }
 .page-padding {
   padding: 120px 20px 20px 20px;
@@ -52,6 +78,7 @@ a {
   height: 25px;
 }
 .button1 {
+  /* almindelige "runde" knapper */
   border-radius: 20px;
   width: 170px;
   height: 45px;
@@ -62,6 +89,7 @@ a {
   cursor: pointer;
 }
 .button2 {
+  /* firkantede knapper */
   width: 150px;
   height: 170px;
   font-family: var(--primary-heading);
@@ -71,6 +99,7 @@ a {
   cursor: pointer;
 }
 .button3 {
+  /* grid knapper */
   width: 160px;
   height: 70px;
   font-family: var(--primary-heading);
@@ -79,6 +108,17 @@ a {
   box-shadow: var(--shadow);
   background-color: #557e54b8;
   color: var(--primary-white);
+  cursor: pointer;
+}
+.button4 {
+  /* kalender knapper */
+  border-radius: 20px;
+  width: 180px;
+  height: 40px;
+  font-family: var(--primary-heading);
+  font-size: 16px;
+  border: none;
+  box-shadow: var(--shadow);
   cursor: pointer;
 }
 .green {
@@ -177,42 +217,48 @@ header {
 /* ==================================== FOOTER ==================================== */
 footer {
   border-top: 5px solid var(--primary-green);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
   background-color: var(--primary-white);
-  padding: 0 20px 20px 20px;
 }
-footer section {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.flex {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  line-height: 14px;
+}
+@media screen and (min-width: 750px) {
+  .flex {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.flex_content {
+  width: 300px;
   text-align: center;
-  margin: 20px 0 10px 0;
+  margin: 20px auto;
 }
 .some-icons {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin: 5px auto 0 auto;
+  margin: 15px auto 0 auto;
+  justify-content: center;
 }
 .iconify {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 .copyright {
   text-align: center;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 750px) {
+  .text_right_desktop {
+    text-align: right;
+  }
+  .text_left_desktop {
+    text-align: left;
+  }
 }
 /* ==================================== INDEX ==================================== */
 .frontpage-hero {
@@ -374,7 +420,7 @@ footer section {
   display: flex;
   flex-direction: row-reverse;
 }
-/* --- VILHELMSBORG SECTION --- */
+/* ==================================== VILHELMSBORG SECTION ==================================== */
 .vilhelmsborg {
   border-top: 5px solid var(--primary-green);
   background-image: url(../images/map.svg);
@@ -387,6 +433,15 @@ footer section {
   align-items: flex-end;
   background-size: 90%;
 }
+@media screen and (min-width: 600px) {
+  .vilhelmsborg {
+    border-top: 5px solid var(--primary-green);
+    background-position: 80% 50%;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    height: 400px;
+  }
+}
 .vilhelmsborg-text {
   text-align: center;
   width: 90%;
@@ -395,15 +450,32 @@ footer section {
   box-shadow: var(--shadow);
   background-color: var(--secondary-gray);
 }
+@media screen and (min-width: 600px) {
+  .vilhelmsborg-text {
+    width: 35%;
+    padding: 30px;
+    margin: auto auto auto 235px;
+    box-shadow: none;
+    background-color: transparent;
+    text-align: left;
+  }
+}
 .vb-logo {
   width: 90%;
   padding: 15px;
 }
+@media screen and (min-width: 600px) {
+  .vb-logo {
+    width: 70%;
+    padding: 15px 0;
+  }
+}
+/* ==================================== SPONSOR SECTION ==================================== */
 .sponsorer {
   border-top: 5px solid var(--primary-green);
   padding: 25px;
+  text-align: center;
 }
-/* --- SPONSOR SLIDER SECTION --- */
 .slick-slide {
   margin: 0px 20px;
 }
@@ -507,6 +579,66 @@ footer section {
   margin: auto;
   height: 600px;
 }
+/* ------------------------------------ CALENDER ----------------------*/
+.filter-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5px 0px;
+  grid-template-areas:
+    "checkbox-area1 checkbox-area1 checkbox-area4 checkbox-area4"
+    "checkbox-area2 checkbox-area2 checkbox-area5 checkbox-area5"
+    "checkbox-area3 checkbox-area3 . .";
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+.checkbox-area5 {
+  grid-area: checkbox-area5;
+}
+.checkbox-area4 {
+  grid-area: checkbox-area4;
+}
+.checkbox-area1 {
+  grid-area: checkbox-area1;
+}
+.checkbox-area2 {
+  grid-area: checkbox-area2;
+}
+.checkbox-area3 {
+  grid-area: checkbox-area3;
+}
+.filter-buttons > div > label {
+  font-family: var(--primary-text);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.eventCheckBox {
+  margin: 0 5px 0 0;
+  height: 25px;
+  width: 25px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  gap: 1em;
+}
+
+.grid-container > article {
+  text-align: center;
+  padding: 2em 1em;
+  background-color: var(--white);
+  transition: 0.3s;
+  cursor: pointer;
+  animation: fadeIn 0.4s;
+  box-shadow: var(--shadow);
+}
+
 /* ==================================== RESPONSIVE ==================================== */
 @media screen and (min-width: 1024px) {
   .burger {
@@ -535,7 +667,7 @@ footer section {
     padding: 10px 0;
   }
   .nav-link {
-    font-size: 1.8em;
+    font-size: 1.4em;
     border: none;
   }
   .flex {
@@ -564,10 +696,6 @@ footer section {
     height: 40px;
   }
   /* ==================================== RESPONSIVE - GENERAL ==================================== */
-  p {
-    font-size: 18px;
-  }
-
   .button1 {
     border-radius: 20px;
     width: 180px;
@@ -584,6 +712,12 @@ footer section {
     height: 60px;
     font-size: 18px;
   }
+  .button4 {
+    border-radius: 20px;
+    width: 180px;
+    height: 45px;
+    font-size: 18px;
+  }
   .button1:hover {
     background-color: var(--primary-gray);
   }
@@ -591,6 +725,9 @@ footer section {
     background-color: var(--primary-gray);
   }
   .button3:hover {
+    background-color: var(--primary-gray);
+  }
+  .button4:hover {
     background-color: var(--primary-gray);
   }
   /* ==================================== RESPONSIVE INDEX ==================================== */
@@ -669,32 +806,41 @@ footer section {
     justify-content: center;
     margin-bottom: 25px;
   }
-  .vilhelmsborg {
-    border-top: 5px solid var(--primary-green);
-    background-position: 80% 50%;
-    background-repeat: no-repeat;
-    background-size: 30%;
-    height: 400px;
-  }
-  .vilhelmsborg-text {
-    width: 35%;
-    padding: 30px;
-    margin: auto auto auto 235px;
-    box-shadow: none;
-    background-color: transparent;
-    text-align: left;
-  }
-  .vilhelmsborg-text h3 {
-    text-align: left;
-    font-size: 30px;
-  }
-  .vb-logo {
-    width: 70%;
-    padding: 15px 0;
-  }
+
   .some-section {
     background-size: cover;
     background-position: center;
     height: 600px;
   }
+}
+
+/* ---------- grid container styling ---------- */
+.event-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  gap: 1em;
+}
+@media (min-width: 600px) {
+  .event-grid-container {
+    grid-template-columns: 1fr 1fr;
+    /*.event-grid-container > article:hover {
+    box-shadow: 0 8px 16px 0 var(--secondary-black);
+    }*/
+  }
+}
+@media (min-width: 992px) {
+  .event-grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.event-grid-container > article {
+  text-align: center;
+  padding: 2em 1em;
+  background-color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  animation: fadeIn 0.4s;
+  box-shadow: var(--shadow);
+  min-width: 345px;
 }
