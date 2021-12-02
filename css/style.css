@@ -218,6 +218,7 @@ header {
 footer {
   border-top: 5px solid var(--primary-green);
   background-color: var(--primary-white);
+  padding: 0 20px;
 }
 .flex {
   display: flex;
