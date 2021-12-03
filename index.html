@@ -20,14 +20,15 @@
       rel="stylesheet"
     />
     <!-- sponsor slider slut -->
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-------------- Navigation -------------->
+    <!-- ==================================== NAVIGATION ==================================== -->
     <header>
-      <a href="#"
-        ><img src="images/logo_aska.svg" alt="ASKA logo" class="logo"
-      /></a>
+      <a href="#">
+        <img src="images/logo_aska.svg" alt="ASKA logo" class="logo" />
+      </a>
       <div class="divider"></div>
       <div class="burger" onclick="toggleMenu()">
         <div class="line line1"></div>
@@ -49,61 +50,65 @@
       </nav>
     </header>
     <main>
-      <h1></h1>
+      <!-- ==================================== HERO SLIDESHOW ==================================== -->
+      <h1>ASKA islænderklub Århus syd</h1>
       <div class="hero-wrapper">
         <section class="frontpage-hero hero1" onload="showSlide('0')">
           <div class="page-padding">
             <p class="hero-text white">111111111</p>
-            <a href=""
-              ><button id="hero-btn" class="hero-read-more button1 green">
+            <a href="">
+              <button id="hero-btn" class="hero-read-more button1 green">
                 111111111
-              </button></a
-            >
+              </button>
+            </a>
           </div>
         </section>
         <section class="frontpage-hero hero2" onload="showSlide('1')">
           <div class="page-padding">
             <p class="hero-text white">222222222</p>
-            <a href=""
-              ><button id="hero-btn" class="hero-read-more button1 green">
+            <a href="">
+              <button id="hero-btn" class="hero-read-more button1 green">
                 222222222
-              </button></a
-            >
+              </button>
+            </a>
           </div>
         </section>
         <section class="frontpage-hero hero3" onload="showSlide('2')">
           <div class="page-padding">
             <p class="hero-text white">333333333</p>
-            <a href=""
-              ><button id="hero-btn" class="hero-read-more button1 green">
+            <a href="">
+              <button id="hero-btn" class="hero-read-more button1 green">
                 333333333
-              </button></a
-            >
-          </div>
+              </button>
+            </a>
+          </div></div>
         </section>
-      </div>
-      <section class="button-section">
-        <a href="pages/bliv-en-del-af-aska.html"
-          ><button class="button2 dark-green2">
-            <p class="btn-text1">Bliv</p>
-            <p class="btn-text2">medlem</p>
-          </button></a
-        >
-        <a href="pages/kalender.html"
-          ><button class="button2 light-green">
-            <p class="btn-text1">Gå til</p>
-            <p class="btn-text2">kalender</p>
-          </button></a
-        >
-        <a href="pages/om-aska.html"
-          ><button class="button2 dark-green">
-            <p class="btn-text1">Bliv</p>
-            <p class="btn-text2">frivillig</p>
-          </button></a
-        >
-      </section>
-      <!------ MEDLEMSFORDELE - FORSIDE -------->
-      <section>
+
+        <!-- ==================================== HERO BUTTON SECTION ==================================== -->
+        <section class="button-section">
+          <a href="pages/bliv-en-del-af-aska.html">
+            <button class="button2 dark-green2">
+              <p class="btn-text1">Bliv</p>
+              <p class="btn-text2">medlem</p>
+            </button>
+          </a>
+          <a href="pages/kalender.html">
+            <button class="button2 light-green">
+              <p class="btn-text1">Gå til</p>
+              <p class="btn-text2">kalender</p>
+            </button>
+          </a>
+          <a href="pages/om-aska.html">
+            <button class="button2 dark-green">
+              <p class="btn-text1">Bliv</p>
+              <p class="btn-text2">frivillig</p>
+            </button>
+          </a>
+        </section>
+      
+
+      <!-- ==================================== MEDLEMSFORDELE ==================================== -->
+      <section class="medlemsfordele">
         <h2>Medlemsfordele</h2>
         <div class="whitespace"></div>
         <div class="container2">
@@ -113,11 +118,11 @@
               onclick="document.getElementById('modal').style.display='block'"
               class="button3"
             >
-              50% <br />
+              50%
+              <br />
               Ridekort til Østanlægget
             </button>
           </div>
-
           <div id="modal" class="modal">
             <div class="modal-text">
               <div class="flex2">
@@ -126,11 +131,7 @@
                   >&times;</span
                 >
               </div>
-              <h3>
-                50% <br />
-                Ridekort til Østanlægget
-              </h3>
-
+              <h3>50% <br />Ridekort til Østanlægget</h3>
               <div class="line4"></div>
               <p class="modal-text-p">
                 ASKA har indgået samarbejde med Vilhelmsborg om køb af ridekort
@@ -152,11 +153,11 @@
               onclick="document.getElementById('modal2').style.display='block'"
               class="button3"
             >
-              10%<br />
+              10%
+              <br />
               Teigar Rideudstyr
             </button>
           </div>
-
           <div id="modal2" class="modal">
             <div class="modal-text">
               <div class="flex2">
@@ -166,10 +167,10 @@
                 >
               </div>
               <h3>
-                10%<br />
+                10%
+                <br />
                 Teigar Rideudstyr
               </h3>
-
               <div class="line4"></div>
               <p class="modal-text-p">
                 Vi har en samarbejdsaftale med Teigar Rideudstyr, som betyder,
@@ -186,7 +187,8 @@
               onclick="document.getElementById('modal3').style.display='block'"
               class="button3"
             >
-              Gratis brug af Vilhelmsborgs<br />
+              Gratis brug af Vilhelmsborgs
+              <br />
               faciliteter på klubdage
             </button>
           </div>
@@ -199,10 +201,10 @@
                 >
               </div>
               <h3>
-                Gratis brug af Vilhelmsborgs<br />
+                Gratis brug af Vilhelmsborgs
+                <br />
                 faciliteter på klubdage
               </h3>
-
               <div class="line4"></div>
               <p class="modal-text-p">
                 Vi holder jævnligt klubdage på Vilhelmsborg, hvor medlemmer
@@ -223,25 +225,25 @@
                 På de fleste klubdage udbydes en form for arrangement med
                 tilmelding. Det kan være forskellige former for undervisning,
                 sjove aktiviteter med hestene, eller det kan være et af vores
-                udvalg, der står for noget særligt. <br />
+                udvalg, der står for noget særligt.
+                <br />
                 Datoer for klubdage kan du se her på hjemmesiden i ASKA’s
                 kalender og på facebook - og de særlige arrangementer i
                 forbindelse med klubdage annonceres på facebook.
               </p>
             </div>
           </div>
-
           <!------ Reduceret pris til ASKA's egne stævner -------->
           <div class="staevner grid-img">
             <button
               onclick="document.getElementById('modal4').style.display='block'"
               class="button3"
             >
-              Reduceret pris til <br />
+              Reduceret pris til
+              <br />
               ASKA's egne stævner
             </button>
           </div>
-
           <div id="modal4" class="modal">
             <div class="modal-text">
               <div class="flex2">
@@ -251,10 +253,10 @@
                 >
               </div>
               <h3>
-                Reduceret pris til <br />
+                Reduceret pris til
+                <br />
                 ASKA's egne stævner
               </h3>
-
               <div class="line4"></div>
               <p class="modal-text-p">
                 Rabatten fremgår på det enkelte stævne/arrangement. Medlemmer
@@ -262,18 +264,17 @@
               </p>
             </div>
           </div>
-
           <!------  Pet House Danmark -------->
           <div class="pet-house grid-img">
             <button
               onclick="document.getElementById('modal5').style.display='block'"
               class="button3"
             >
-              10% <br />
+              10%
+              <br />
               Pet House Danmark
             </button>
           </div>
-
           <div id="modal5" class="modal">
             <div class="modal-text">
               <div class="flex2">
@@ -283,10 +284,10 @@
                 >
               </div>
               <h3>
-                10% <br />
+                10%
+                <br />
                 Pet House Danmark
               </h3>
-
               <div class="line4"></div>
               <p class="modal-text-p">
                 Vi har ligeså indgået en samarbejdsaftale med Pet House Danmark
@@ -296,14 +297,14 @@
               </p>
             </div>
           </div>
-
           <!------ Saxild Naturfoder -------->
           <div class="saxild grid-img">
             <button
               onclick="document.getElementById('modal6').style.display='block'"
               class="button3"
             >
-              10% <br />
+              10%
+              <br />
               Saxild Naturfoder
             </button>
           </div>
@@ -316,10 +317,10 @@
                 >
               </div>
               <h3>
-                10% <br />
+                10%
+                <br />
                 Saxild Naturfoder
               </h3>
-
               <div class="line4"></div>
               <p class="modal-text-p">
                 Alle ASKA medlemmer får 10 pct. på alle køb hos Saxild
@@ -331,41 +332,45 @@
         </div>
       </section>
 
-      <!------ HURTIG LINKS - FORSIDE -------->
+      <!-- ==================================== HURTIG LINKS SECTION ==================================== -->
       <div class="whitespace"></div>
-      <h2>Hurtig links</h2>
+      <h2 class="hurtiglinks">Hurtig links</h2>
       <div class="whitespace"></div>
       <section class="button-section2">
-        <a href="pages/om-aska.html"
-          ><button class="button1 light-green">Om ASKA</button></a
-        >
-        <a href="pages/kalender.html"
-          ><button class="button1 dark-green">ASKA Stævner</button></a
-        >
-        <a href="pages/aska-ungdom.html"
-          ><button class="button1 dark-green2">ASKA Ungdom</button></a
-        >
+        <a href="pages/om-aska.html">
+          <button class="button1 light-green">Om ASKA</button>
+        </a>
+        <a href="pages/kalender.html">
+          <button class="button1 dark-green">ASKA Stævner</button>
+        </a>
+        <a href="pages/aska-ungdom.html">
+          <button class="button1 dark-green2">ASKA Ungdom</button>
+        </a>
       </section>
       <div class="whitespace"></div>
       <!-- ==================================== VILHELMSBORG SECTION ==================================== -->
+      <div class="greenspace"></div>
       <section class="vilhelmsborg">
-        <div class="vilhelmsborg-text">
-          <h3>ASKA's hjemmebane</h3>
+        <div class="vilhelmsborg_flex">
+          <div class="vilhelmsborg_map"></div>
+          <div class="vilhelmsborg-text">
+            <h3>ASKA's hjemmebane</h3>
+            <div class="whitespace"></div>
+            <p>
+              ASKA hører hjemme på Det Nationale Hestesportcenter Vilhelmsborg,
+              Bedervej 101, 8320 Mårslet.
+            </p>
+            <img
+              class="vb-logo"
+              src="images/vblogo.svg"
+              alt="vilhelmsborg logo"
+            />
+          </div>
           <div class="whitespace"></div>
-          <p>
-            ASKA hører hjemme på Det Nationale Hestesportcenter Vilhelmsborg,
-            Bedervej 101, 8320 Mårslet.
-          </p>
-          <img
-            class="vb-logo"
-            src="images/vblogo.svg"
-            alt="vilhelmsborg logo"
-          />
         </div>
-        <div class="vilhelmsborg_map"></div>
-        <div class="whitespace"></div>
       </section>
-      <!------ SPONSORER - FORSIDE -------->
+      <div class="greenspace"></div>
+      <!-- ==================================== SPONSOR SECTION ==================================== -->
       <section class="sponsorer">
         <h2>Tak til ASKA sponsorer</h2>
         <div class="whitespace"></div>
@@ -419,9 +424,6 @@
                 src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"
               />
             </div>
-            <!------ (NYE SPONSORER TILFØJES HER) -------->
-
-            <!-------------->
           </section>
         </div>
         <div class="whitespace"></div>
@@ -432,7 +434,7 @@
         </div>
         <div class="whitespace"></div>
       </section>
-      <!------ SOME: SECTION - FORSIDE -------->
+      <!-- ==================================== SOME SECTION ==================================== -->
       <section class="some-section"></section>
     </main>
     <!-- ==================================== FOOTER ==================================== -->
@@ -448,28 +450,34 @@
         <div class="flex_content">
           <h3>Følg ASKA på de sociale medier:</h3>
           <div class="some-icons">
-            <a href="https://www.instagram.com/islaenderklubben_aska/"
-              ><span
+            <a href="https://www.instagram.com/islaenderklubben_aska/">
+              <span
                 class="iconify"
                 data-icon="brandico:instagram-filled"
-              ></span
-            ></a>
-            <a href="https://www.facebook.com/groups/1389413571362415/"
-              ><span class="iconify" data-icon="brandico:facebook-rect"></span
-            ></a>
+              ></span>
+            </a>
+            <a href="https://www.facebook.com/groups/1389413571362415/">
+              <span class="iconify" data-icon="brandico:facebook-rect"></span>
+            </a>
           </div>
         </div>
         <div class="flex_content text_right_desktop">
           <h3>Hurtig links</h3>
-          <p><a href="">Bliv medlem</a></p>
-          <p><a href="">Bliv sponsor</a></p>
+          <p>
+            <a href="">Bliv medlem</a>
+          </p>
+          <p>
+            <a href="">Bliv sponsor</a>
+          </p>
           <p>
             <a
               href="https://wondersport.dk/profilshop/aska.html?fbclid=IwAR1_ZgWV__yaSggiRXDUpxJQ_WTyYtMhbWpxqYBJVCeP5nvUFw3OyEjExpU"
               >Bestil klubtøj</a
             >
           </p>
-          <p><a href="">For administrator</a></p>
+          <p>
+            <a href="">For administrator</a>
+          </p>
         </div>
       </div>
       <div>
@@ -480,7 +488,6 @@
       </div>
     </footer>
     <script src="js/main.js" type="module"></script>
-
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
   </body>
 </html>

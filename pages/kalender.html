@@ -9,6 +9,7 @@
       href="../images/fav_icon.svg"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <title>Kalender</title>
   </head>
@@ -52,6 +53,7 @@
               class="eventCheckBox"
               id="ASKA-Fællesture"
             />
+            <div class="checkbox_box"></div>
           </label>
         </div>
         <div class="checkbox-area4">
@@ -64,6 +66,7 @@
               class="eventCheckBox"
               id="Klubdage"
             />
+            <div class="checkbox_box"></div>
           </label>
         </div>
         <div class="checkbox-area1">
@@ -76,6 +79,7 @@
               class="eventCheckBox"
               id="Stævner"
             />
+            <div class="checkbox_box"></div>
           </label>
         </div>
         <div class="checkbox-area2">
@@ -88,6 +92,7 @@
               class="eventCheckBox"
               id="Foredrag-og-kursus"
             />
+            <div class="checkbox_box"></div>
           </label>
         </div>
         <div class="checkbox-area3">
@@ -100,57 +105,79 @@
               class="eventCheckBox"
               id="ASKA-Ungdom"
             />
+            <div class="checkbox_box"></div>
           </label>
         </div>
       </div>
-      <section class="calender"></section>
+      <input
+        class="search-bar"
+        type="search"
+        placeholder="Søg..."
+        onkeyup="search(this.value)"
+      />
+      <section class="calender">
+        <div id="calender-modal" class="modal modal_grid">
+          <img
+            class="calender-modal-logo"
+            src="../images/fav_icon.svg"
+            alt=""
+          />
+          <div class="modal-text2"></div>
+        </div>
+      </section>
       <section id="content" class="event-grid-container"></section>
     </main>
-    <!------ FOOTER -------->
+    <!-- ==================================== FOOTER ==================================== -->
     <footer>
       <div class="flex">
-        <section class="contact">
+        <div class="flex_content text_left_desktop">
           <h3>Kontakt ASKA</h3>
           <p class="address">Vilhelmsborgvej 1, 8320 Mårslet</p>
           <a href="mailto:aska.bestyrelse@gmail.com"
             >aska.bestyrelse@gmail.com</a
           >
-        </section>
-        <section class="social">
+        </div>
+        <div class="flex_content">
           <h3>Følg ASKA på de sociale medier:</h3>
           <div class="some-icons">
-            <a href="https://www.instagram.com/islaenderklubben_aska/"
-              ><span
+            <a href="https://www.instagram.com/islaenderklubben_aska/">
+              <span
                 class="iconify"
                 data-icon="brandico:instagram-filled"
-              ></span
-            ></a>
-            <a href="https://www.facebook.com/groups/1389413571362415/"
-              ><span class="iconify" data-icon="brandico:facebook-rect"></span
-            ></a>
+              ></span>
+            </a>
+            <a href="https://www.facebook.com/groups/1389413571362415/">
+              <span class="iconify" data-icon="brandico:facebook-rect"></span>
+            </a>
           </div>
-        </section>
-        <section class="quick-links">
+        </div>
+        <div class="flex_content text_right_desktop">
           <h3>Hurtig links</h3>
-          <a href="" class="quick-link">Bliv medlem </a>
-          <a href="" class="quick-link">Bliv sponsor</a>
-          <a
-            href="https://wondersport.dk/profilshop/aska.html?fbclid=IwAR1_ZgWV__yaSggiRXDUpxJQ_WTyYtMhbWpxqYBJVCeP5nvUFw3OyEjExpU"
-            class="quick-link"
-            >Bestil klubtøj</a
-          >
-          <a href="" class="quick-link">Tilmeld nyhedsbrev</a>
-          <a href="" class="quick-link">For administrator</a>
-        </section>
+          <p>
+            <a href="">Bliv medlem</a>
+          </p>
+          <p>
+            <a href="">Bliv sponsor</a>
+          </p>
+          <p>
+            <a
+              href="https://wondersport.dk/profilshop/aska.html?fbclid=IwAR1_ZgWV__yaSggiRXDUpxJQ_WTyYtMhbWpxqYBJVCeP5nvUFw3OyEjExpU"
+              >Bestil klubtøj</a
+            >
+          </p>
+          <p>
+            <a href="">For administrator</a>
+          </p>
+        </div>
       </div>
-      <h6 class="copyright">
-        © Copyright 2021 Maja Wennerwald, Camilla Nørgaard & Jesper Krüger. All
-        rights reserved.
-      </h6>
+      <div>
+        <h6 class="copyright">
+          © Copyright 2021 Maja Wennerwald, Camilla Nørgaard & Jesper Krüger.
+          All rights reserved.
+        </h6>
+      </div>
     </footer>
     <script src="../js/main.js" type="module"></script>
-
-    <div id="fb-root"></div>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
   </body>
 </html>

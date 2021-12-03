@@ -32,25 +32,7 @@ export default class Event {
     });
   }
 
-  //var stævner = myArray.filter(category => category.includes('stævner'))
-
-  /*
-  let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
-
-/**
- * Filter array items based on search criteria (query)
- */ /*
-function filterItems(arr, query) {
-  return arr.filter(function(el) {
-    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
-  })
-}
-*/ /*
-console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
-console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
-*/
-
-  // append users to the DOM
+  // append events to the DOM
   appendEvents(events) {
     let htmlTemplate = "";
     for (const event of events) {
@@ -66,6 +48,26 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
     }
 
     document.querySelector("#content").innerHTML = htmlTemplate;
+  }
+
+  showDetailView(id) {
+    const event = this.events.find((event) => event.id == id);
+    document.querySelector("#calender-modal").style.display = "block";
+    let htmlTemplate = "";
+    htmlTemplate = /*html*/ `
+    <div class="flex2">
+    <span
+      onclick="document.getElementById('calender-modal').style.display='none'"
+      >&times;</span
+    >
+  </div>
+
+    <h3>${event.name}</h3>
+    <div class="line5"></div>
+    <p class="modal-text-p">${event.description}</p>
+    <a href="${event.link}" target="_blank"><button class="button4 light-green">Tilmeld</button></a>
+    `;
+    document.querySelector(".modal-text2").innerHTML = htmlTemplate;
   }
 
   filterEvents() {
@@ -84,27 +86,22 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
       }
     });
   }
-}
 
-// sort by category
-function orderBy(value) {
-  if (value === "name") {
-    sortByName();
-  } else if (value === "year") {
-    sortByYear();
+  // search
+  search(searchValue) {
+    searchValue = searchValue.toLowerCase();
+    console.log(searchValue);
+
+    let results = [];
+
+    for (const eventName of this.events) {
+      console.log(eventName);
+      let name = eventName.name.toLocaleLowerCase();
+      if (name.includes(searchValue)) {
+        results.push(eventName);
+      }
+    }
+
+    this.appendEvents(results);
   }
-}
-
-function sortByName() {
-  _movies.sort((movie1, movie2) => {
-    return movie1.title.rendered.localeCompare(movie2.title.rendered);
-  });
-  appendMovies(_movies);
-}
-
-function sortByYear() {
-  _movies.sort((movie1, movie2) => {
-    return movie1.acf.year.localeCompare(movie2.acf.year);
-  });
-  appendMovies(_movies);
 }

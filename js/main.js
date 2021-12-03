@@ -14,9 +14,11 @@ let toggleMenu = () => {
 };
 
 window.toggleMenu = () => toggleMenu();
+window.search = (value) => _event.search(value);
+window.showDetailView = (id) => _event.showDetailView(id);
 
 try {
-  document.querySelector(".button-section").scrollLeft = 90;
+  document.querySelector(".button-section").scrollLeft = 80;
 } catch (error) {
   console.error();
 }

@@ -14,12 +14,6 @@
   --primary-heading: "Playfair Display", serif;
   --primary-text: "Abel", sans-serif;
 }
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 html {
   font-size: 100%;
   height: 100%;
@@ -42,7 +36,7 @@ h5 {
   font-family: var(--primary-heading);
   font-size: 20px;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 600px) {
   h1,
   h2,
   h3,
@@ -54,8 +48,10 @@ h5 {
 p {
   font-family: var(--primary-text);
   font-size: 15px;
+  margin: 0;
+  line-height: 25px;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 600px) {
   p {
     font-size: 17px;
   }
@@ -66,7 +62,7 @@ a {
   text-decoration: none;
   font-size: 15px;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 600px) {
   a {
     font-size: 17px;
   }
@@ -76,6 +72,11 @@ a {
 }
 .whitespace {
   height: 25px;
+}
+.greenspace {
+  width: 100%;
+  height: 5px;
+  background-color: var(--primary-green);
 }
 .button1 {
   /* almindelige "runde" knapper */
@@ -90,25 +91,56 @@ a {
 }
 .button2 {
   /* firkantede knapper */
-  width: 150px;
+  width: 100%;
   height: 170px;
-  font-family: var(--primary-heading);
-  font-size: 20px;
   border: none;
   box-shadow: var(--shadow);
   cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  .button2 {
+    width: 100%;
+    height: 240px;
+    font-size: 24px;
+  }
+  .button2:hover {
+    background-color: var(--primary-gray);
+  }
+}
+.btn-text1 {
+  font-family: var(--primary-heading);
+  font-size: 50px;
+  line-height: 60px;
+}
+.btn-text2 {
+  font-family: var(--primary-heading);
+  font-size: 30px;
+}
+@media screen and (min-width: 992px) {
+  .btn-text1 {
+    font-size: 80px;
+    line-height: 80px;
+  }
+  .btn-text2 {
+    font-size: 40px;
+  }
 }
 .button3 {
   /* grid knapper */
   width: 160px;
   height: 70px;
   font-family: var(--primary-heading);
-  font-size: 16px;
   border: none;
   box-shadow: var(--shadow);
   background-color: #557e54b8;
   color: var(--primary-white);
   cursor: pointer;
+}
+@media screen and (min-width: 600px) {
+  .button3 {
+    width: 100%;
+    height: 60px;
+  }
 }
 .button4 {
   /* kalender knapper */
@@ -225,12 +257,13 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  line-height: 14px;
+  line-height: 24px;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 600px) {
   .flex {
     flex-direction: row;
     align-items: flex-start;
+    line-height: 34px;
   }
 }
 .flex_content {
@@ -245,15 +278,26 @@ footer {
   margin: 15px auto 0 auto;
   justify-content: center;
 }
+@media screen and (min-width: 600px) {
+  .some-icons {
+    gap: 20px;
+  }
+}
 .iconify {
   width: 40px;
   height: 40px;
+}
+@media screen and (min-width: 600px) {
+  .iconify {
+    width: 45px;
+    height: 45px;
+  }
 }
 .copyright {
   text-align: center;
   padding-bottom: 10px;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 600px) {
   .text_right_desktop {
     text-align: right;
   }
@@ -261,9 +305,10 @@ footer {
     text-align: left;
   }
 }
+
 /* ==================================== INDEX ==================================== */
 .frontpage-hero {
-  background-position: center;
+  background-position: top;
   height: 80vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -287,42 +332,29 @@ footer {
   background-image: url(../images/hero1.jpg);
 }
 .hero2 {
-  background-image: url(../images/map.svg);
+  background-image: url(../images/hero2.png);
 }
 .hero3 {
-  background-image: url(../images/logo_aska.svg);
+  background-image: url(../images/hero3.jpg);
 }
 
 .hero-wrapper {
   position: relative;
-  height: 650px;
+  height: 80vh;
+}
+@media screen and (min-width: 600px) {
+  .hero-wrapper {
+    height: 75vh;
+  }
 }
 .hero-text {
   margin-bottom: 20px;
   transition: 4s ease-in-out content;
 }
-.button-section {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, 40vw);
-  overflow: scroll;
-  gap: 40px;
-  scroll-snap-type: x mandatory;
-  position: relative;
-  top: -80px;
-  height: 210px;
+.hero-section {
+  height: 80vh;
 }
-.button-section::-webkit-scrollbar {
-  display: none;
-}
-.btn-text1 {
-  font-family: var(--primary-heading);
-  font-size: 50px;
-}
-.btn-text2 {
-  font-family: var(--primary-heading);
-  font-size: 30px;
-}
+/* ==================================== MEDLEMSFORDELE SECTION ==================================== */
 .container2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -339,6 +371,21 @@ footer {
     "klubdage staevner"
     "pet-house saxild";
 }
+@media screen and (min-width: 600px) {
+  .container2 {
+    width: 80%;
+    margin: auto;
+    height: 60vh;
+    grid-template-columns: 1.1fr 0.9fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas:
+      "ostanlaegget teigar-rideudstyr klubdage klubdage"
+      "ostanlaegget staevner staevner pet-house"
+      "ostanlaegget saxild saxild pet-house"
+      "ostanlaegget saxild saxild pet-house";
+  }
+}
 .grid-img {
   background-position: center;
   height: 160px;
@@ -350,35 +397,65 @@ footer {
   display: flex;
   align-items: flex-end;
 }
+@media screen and (min-width: 600px) {
+  .grid-img {
+    width: 100%;
+    height: 100%;
+  }
+}
 .ostanlaegget {
   grid-area: ostanlaegget;
   background-image: url(../images/fav_icon.svg);
+}
+@media screen and (min-width: 600px) {
+  .ostanlaegget {
+    grid-area: ostanlaegget;
+  }
 }
 .teigar-rideudstyr {
   grid-area: teigar-rideudstyr;
   background-image: url(../images/fav_icon.svg);
 }
+@media screen and (min-width: 600px) {
+  .teigar-rideudstyr {
+    grid-area: teigar-rideudstyr;
+  }
+}
 .klubdage {
   grid-area: klubdage;
   background-image: url(../images/fav_icon.svg);
+}
+@media screen and (min-width: 600px) {
+  .klubdage {
+    grid-area: klubdage;
+  }
 }
 .staevner {
   grid-area: staevner;
   background-image: url(../images/fav_icon.svg);
 }
+@media screen and (min-width: 600px) {
+  .staevner {
+    grid-area: staevner;
+  }
+}
 .pet-house {
   grid-area: pet-house;
   background-image: url(../images/fav_icon.svg);
+}
+@media screen and (min-width: 600px) {
+  .pet-house {
+    grid-area: pet-house;
+  }
 }
 .saxild {
   grid-area: saxild;
   background-image: url(../images/fav_icon.svg);
 }
-.button-section2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+@media screen and (min-width: 600px) {
+  .saxild {
+    grid-area: saxild;
+  }
 }
 .modal {
   width: 100%;
@@ -393,12 +470,24 @@ footer {
   color: var(--primary-white);
   padding-bottom: 15px;
 }
+@media screen and (min-width: 600px) {
+  .modal-text {
+    margin: 12% auto;
+    width: 70%;
+    height: 510px;
+  }
+}
 .modal-text-p {
   overflow: scroll;
   height: 200px;
   width: 80%;
   margin: auto;
   font-size: 16px;
+}
+@media screen and (min-width: 600px) {
+  .modal-text-p {
+    font-size: 18px;
+  }
 }
 .modal span {
   font-size: 50px;
@@ -417,65 +506,148 @@ footer {
   background-color: var(--primary-white);
   margin: 10px auto;
 }
+@media screen and (min-width: 600px) {
+  .line4 {
+    width: 40%;
+    margin: 25px auto;
+  }
+}
 .flex2 {
   display: flex;
   flex-direction: row-reverse;
 }
-/* ==================================== VILHELMSBORG SECTION ==================================== */
-.vilhelmsborg {
-  border-top: 5px solid var(--primary-green);
-  background-image: url(../images/map.svg);
-  background-position-x: 25px;
-  background-position-y: 15px;
-  background-repeat: no-repeat;
-  margin: auto;
-  height: 555px;
-  display: flex;
-  align-items: flex-end;
-  background-size: 90%;
+@media screen and (min-width: 600px) {
+  .flex2 {
+    gap: 10px;
+  }
 }
 @media screen and (min-width: 600px) {
-  .vilhelmsborg {
-    border-top: 5px solid var(--primary-green);
-    background-position: 80% 50%;
-    background-repeat: no-repeat;
-    background-size: 30%;
+  .modal p {
+    width: 60%;
+    margin: auto;
+  }
+}
+
+/* ==================================== HERO BUTTON SECTION ==================================== */
+.button-section {
+  display: grid;
+  grid-template-columns: repeat(3, 40vw);
+  overflow: scroll;
+  gap: 40px;
+  scroll-snap-type: x mandatory;
+  position: relative;
+  height: 210px;
+  margin-top: -75px;
+}
+@media screen and (min-width: 600px) {
+  .button-section {
+    grid-template-columns: repeat(3, 20vw);
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    height: 275px;
+    text-align: center;
+    margin-top: -45px;
+  }
+}
+.button-section::-webkit-scrollbar {
+  display: none;
+}
+/* ==================================== HURTIG LINKS SECTION ==================================== */
+.hurtiglinks {
+  text-align: center;
+}
+.button-section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+@media screen and (min-width: 600px) {
+  .button-section2 {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+}
+.medlemsfordele {
+  text-align: center;
+}
+/* ==================================== VILHELMSBORG SECTION ==================================== */
+.vilhelmsborg {
+  background-color: white;
+}
+.vilhelmsborg_flex {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 150px 150px 150px 150px;
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+}
+@media screen and (min-width: 600px) {
+  .vilhelmsborg_flex {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
     height: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .vilhelmsborg_flex {
+    width: 80%;
+  }
+}
+.vilhelmsborg_map {
+  grid-column: 1;
+  grid-row: 1/5;
+  background-image: url("../images/map.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (min-width: 600px) {
+  .vilhelmsborg_map {
+    grid-column: 2;
+    grid-row: 1;
   }
 }
 .vilhelmsborg-text {
   text-align: center;
   width: 90%;
   padding: 10px;
-  margin: 15px auto;
+  margin: 40px auto 15px auto;
   box-shadow: var(--shadow);
   background-color: var(--secondary-gray);
+  grid-column: 1;
+  grid-row: 3/5;
 }
 @media screen and (min-width: 600px) {
   .vilhelmsborg-text {
-    width: 35%;
     padding: 30px;
-    margin: auto auto auto 235px;
     box-shadow: none;
     background-color: transparent;
     text-align: left;
+    grid-column: 1;
+    grid-row: 1;
   }
 }
 .vb-logo {
-  width: 90%;
+  width: 300px;
   padding: 15px;
 }
 @media screen and (min-width: 600px) {
   .vb-logo {
-    width: 70%;
+    width: 350px;
     padding: 15px 0;
   }
 }
 /* ==================================== SPONSOR SECTION ==================================== */
 .sponsorer {
-  border-top: 5px solid var(--primary-green);
   padding: 25px;
   text-align: center;
+  background-color: white;
 }
 .slick-slide {
   margin: 0px 20px;
@@ -583,53 +755,48 @@ footer {
 /* ------------------------------------ CALENDER ----------------------*/
 .filter-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 5px 0px;
-  grid-template-areas:
-    "checkbox-area1 checkbox-area1 checkbox-area4 checkbox-area4"
-    "checkbox-area2 checkbox-area2 checkbox-area5 checkbox-area5"
-    "checkbox-area3 checkbox-area3 . .";
-  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 5px;
+  max-width: 100%;
   height: 100%;
   padding: 0 20px;
 }
-.checkbox-area5 {
-  grid-area: checkbox-area5;
-}
-.checkbox-area4 {
-  grid-area: checkbox-area4;
-}
-.checkbox-area1 {
-  grid-area: checkbox-area1;
-}
-.checkbox-area2 {
-  grid-area: checkbox-area2;
-}
-.checkbox-area3 {
-  grid-area: checkbox-area3;
+@media screen and (min-width: 992px) {
+  .filter-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 .filter-buttons > div > label {
   font-family: var(--primary-text);
-  display: flex;
+  display: inline-flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
 }
-
 .eventCheckBox {
-  margin: 0 5px 0 0;
+  display: none;
+}
+.checkbox_box {
   height: 25px;
   width: 25px;
+  background-color: white;
+  margin: 0 5px 0 0;
+  border: 1px solid var(--primary-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
 }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 1em;
-  gap: 1em;
+.checkbox_box::after {
+  content: "\2714";
+  color: white;
 }
-
+.eventCheckBox:checked + .checkbox_box {
+  background: var(--primary-green);
+}
 .grid-container > article {
   text-align: center;
   padding: 2em 1em;
@@ -638,6 +805,100 @@ footer {
   cursor: pointer;
   animation: fadeIn 0.4s;
   box-shadow: var(--shadow);
+}
+.search-bar {
+  width: 345px;
+  height: 25px;
+  display: block;
+  margin: 20px auto 0 auto;
+  font-family: var(--primary-text);
+  border: 1px solid var(--primary-black);
+  box-shadow: var(--shadow);
+}
+@media screen and (min-width: 992px) {
+  .search-bar {
+    margin: 50px auto 0 auto;
+  }
+}
+.modal_grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 25% 25% 50%;
+  width: 100%;
+}
+#calender-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  text-align: center;
+}
+#calender-modal p {
+  margin: 20px auto;
+  height: 265px;
+  text-align: left;
+}
+@media screen and (min-width: 600px) {
+  #calender-modal p {
+    width: 80%;
+  }
+}
+.modal-text2 {
+  width: 85%;
+  height: auto;
+  background-color: var(--primary-white);
+  margin: 0 auto;
+  color: var(--primary-black);
+  padding-bottom: 15px;
+  border-radius: 20px;
+  border: 5px solid var(--primary-green);
+  grid-row: 2/3;
+}
+@media screen and (min-width: 600px) {
+  .modal-text2 {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .modal-text2 {
+    margin: 0 auto;
+    width: 65%;
+  }
+}
+.calender-modal-logo {
+  width: 150px;
+  position: relative;
+  top: 4%;
+  grid-row: 1/2;
+}
+@media screen and (min-width: 600px) {
+  .calender-modal-logo {
+    width: 200px;
+    top: 5.6%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .calender-modal-logo {
+    width: 200px;
+    top: 5.2%;
+  }
+}
+.line5 {
+  width: 55%;
+  height: 2px;
+  background-color: var(--primary-green);
+  margin: 10px auto;
+}
+@media screen and (min-width: 600px) {
+  .line5 {
+    width: 60%;
+    margin: 25px auto;
+  }
 }
 
 /* ==================================== RESPONSIVE ==================================== */
@@ -689,13 +950,7 @@ footer {
     -ms-flex-align: end;
     align-items: flex-end;
   }
-  .some-icons {
-    gap: 50px;
-  }
-  .iconify {
-    width: 40px;
-    height: 40px;
-  }
+
   /* ==================================== RESPONSIVE - GENERAL ==================================== */
   .button1 {
     border-radius: 20px;
@@ -703,16 +958,7 @@ footer {
     height: 50px;
     font-size: 22px;
   }
-  .button2 {
-    width: 230px;
-    height: 240px;
-    font-size: 20px;
-  }
-  .button3 {
-    width: 100%;
-    height: 60px;
-    font-size: 18px;
-  }
+
   .button4 {
     border-radius: 20px;
     width: 180px;
@@ -722,9 +968,7 @@ footer {
   .button1:hover {
     background-color: var(--primary-gray);
   }
-  .button2:hover {
-    background-color: var(--primary-gray);
-  }
+
   .button3:hover {
     background-color: var(--primary-gray);
   }
@@ -732,81 +976,6 @@ footer {
     background-color: var(--primary-gray);
   }
   /* ==================================== RESPONSIVE INDEX ==================================== */
-  .button-section {
-    grid-template-columns: repeat(3, 20vw);
-    justify-content: center;
-    height: 275px;
-    text-align: center;
-    gap: 10px;
-  }
-  .btn-text1 {
-    font-size: 90px;
-    line-height: 50px;
-  }
-  .btn-text2 {
-    font-size: 50px;
-  }
-  .container2 {
-    width: 70%;
-    margin: auto;
-    height: 60vh;
-    grid-template-columns: 1.1fr 0.9fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 20px 20px;
-    grid-template-areas:
-      "ostanlaegget teigar-rideudstyr klubdage klubdage"
-      "ostanlaegget staevner staevner pet-house"
-      "ostanlaegget saxild saxild pet-house"
-      "ostanlaegget saxild saxild pet-house";
-  }
-  .grid-img {
-    width: 100%;
-    height: 100%;
-  }
-  .ostanlaegget {
-    grid-area: ostanlaegget;
-  }
-  .klubdage {
-    grid-area: klubdage;
-  }
-  .staevner {
-    grid-area: staevner;
-  }
-  .teigar-rideudstyr {
-    grid-area: teigar-rideudstyr;
-  }
-  .saxild {
-    grid-area: saxild;
-  }
-  .pet-house {
-    grid-area: pet-house;
-  }
-  .modal-text {
-    margin: 12% auto;
-    width: 70%;
-    height: 510px;
-  }
-  .modal-text-p {
-    font-size: 18px;
-  }
-  .modal p {
-    width: 60%;
-    margin: auto;
-  }
-  .line4 {
-    width: 40%;
-    margin: 25px auto;
-  }
-  .flex2 {
-    gap: 10px;
-  }
-
-  .button-section2 {
-    flex-direction: row;
-    gap: 125px;
-    justify-content: center;
-    margin-bottom: 25px;
-  }
 
   .some-section {
     background-size: cover;
@@ -843,5 +1012,5 @@ footer {
   cursor: pointer;
   animation: fadeIn 0.4s;
   box-shadow: var(--shadow);
-  min-width: 345px;
+  min-width: 250px;
 }
