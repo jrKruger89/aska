@@ -45,6 +45,7 @@ h3,
 h5 {
   font-family: var(--primary-heading);
   font-size: 20px;
+  line-height: normal;
 }
 @media screen and (min-width: 600px) {
   h1,
@@ -142,7 +143,7 @@ a {
   border: none;
   box-shadow: var(--shadow);
   background-color: var(--primary-green-opacity);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
   color: var(--primary-white);
   cursor: pointer;
 }
@@ -659,7 +660,40 @@ footer {
   text-align: center;
   background-color: white;
 }
-.slick-slide {
+
+.sponsor_logo img {
+  width: 100px !important;
+  filter: grayscale(1);
+  margin: 0 10px;
+}
+
+.sponsor_flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  animation-name: sponsor;
+  animation-duration: 10s;
+  position: relative;
+  animation-iteration-count: infinite;
+}
+
+.sponsor_logo_container {
+  width: 100%;
+  overflow: hidden;
+}
+
+@keyframes sponsor {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/*.slick-slide {
   margin: 0px 20px;
 }
 .slick-slide img {
@@ -754,7 +788,7 @@ footer {
 }
 .slick-arrow.slick-hidden {
   display: none;
-}
+}*/
 /* --- SOME SECTION --- */
 .some-section {
   background-image: url(../images/hero1.jpg);
@@ -770,6 +804,9 @@ footer {
   max-width: 100%;
   height: 100%;
   padding: 0 20px;
+}
+.center {
+  text-align: center;
 }
 @media screen and (min-width: 992px) {
   .filter-buttons {
@@ -1031,11 +1068,12 @@ footer {
   }
 
   .button3:hover {
-    background-color: var(--primary-gray);
+    background-color: var(--primary-gray-opacity);
   }
   .button4:hover {
     background-color: var(--primary-gray);
   }
+
   /* ==================================== RESPONSIVE INDEX ==================================== */
 
   .some-section {

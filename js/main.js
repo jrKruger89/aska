@@ -2,6 +2,14 @@
 
 import Event from "./event-service.js";
 let _event = new Event();
+
+import Sponsor from "./sponsor-service.js";
+let _sponsor = new Sponsor();
+
+document.querySelector("#btn-create").onclick = () => createSponsor();
+window.previewImage = (file, previewId) =>
+  _sponsor.previewImage(file, previewId);
+window.createSponsor = () => _sponsor.createSponsor();
 /**
  * Toggle menu for mobile devices
  */

@@ -10,6 +10,8 @@ import {
   deleteDoc,
 } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
+let _selectedImgFile = "";
+
 export default class Sponsor {
   constructor() {
     this.sponsorRef = collection(_db, "sponsors");
@@ -26,7 +28,56 @@ export default class Sponsor {
         sponsor.id = doc.id;
         return sponsor;
       });
-      this.appendUsers(this.sponsors);
+      this.appendSponsors(this.sponsors);
     });
+  }
+
+  appendSponsors(sponsors) {
+    let htmlTemplate = "";
+    for (const sponsor of sponsors) {
+      htmlTemplate += /*html*/ `
+      <div class="sponsor_logo">
+      <img src="${sponsor.img}">
+      </div>
+      `;
+    }
+    document.querySelector(".sponsor_flex").innerHTML = htmlTemplate;
+  }
+
+  previewImage(file, previewId) {
+    if (file) {
+      _selectedImgFile = file;
+      let reader = new FileReader();
+      reader.onload = (event) => {
+        console.log(event);
+        document
+          .querySelector("#" + previewId)
+          .setAttribute("src", event.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  createSponsor() {
+    // references to the input fields
+    let imgInput = document.querySelector("#imagePreview");
+
+    const newSponsor = {
+      img: imgInput.src,
+    };
+    addDoc(this.sponsorRef, newSponsor);
+  }
+
+  updateSponsor(id, image) {
+    const sponsorToUpdate = {
+      image: image,
+    };
+    const sponsorRef = doc(this.sponsorRef, id);
+    updateDoc(sponsorRef, sponsorToUpdate);
+  }
+
+  deleteSponsor(id) {
+    const docRef = doc(this.sponsorRef, id);
+    deleteDoc(docRef);
   }
 }
