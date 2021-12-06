@@ -1,4 +1,5 @@
 import { _db } from "./firebase-service.js";
+import { showLoader } from "./loader-component.js";
 
 import {
   getFirestore,
@@ -28,7 +29,7 @@ export default class Event {
       });
       this.appendEvents(this.events);
       console.log(this.events);
-      this.filterEvents("Foredrag og kursus");
+      showLoader(false);
     });
   }
 
@@ -70,6 +71,7 @@ export default class Event {
     document.querySelector(".modal-text2").innerHTML = htmlTemplate;
   }
 
+  //filter
   filterEvents() {
     document.addEventListener("change", () => {
       const checkedValues = [...document.querySelectorAll(".eventCheckBox")]
