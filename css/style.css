@@ -16,6 +16,9 @@
   --primary-heading: "Playfair Display", serif;
   --primary-text: "Abel", sans-serif;
 }
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 100%;
   height: 100%;
@@ -259,7 +262,6 @@ header {
 }
 /* ==================================== FOOTER ==================================== */
 footer {
-  border-top: 5px solid var(--primary-green);
   background-color: var(--primary-white);
   padding: 0 20px;
 }
@@ -327,7 +329,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  animation: fadeIn linear 4s;
+  animation: fadeIn linear 1s;
   box-shadow: var(--shadow);
 }
 @keyframes fadeIn {
@@ -359,11 +361,18 @@ footer {
   }
 }
 .hero-text {
-  margin-bottom: 20px;
   transition: 4s ease-in-out content;
+  width: 65%;
+  margin: 0 auto 20px auto;
+  text-shadow: var(--primary-black) 1px 0 10px;
 }
 .hero-section {
   height: 80vh;
+}
+.background_filter_hero{
+  height: 80vh;
+  z-index: 999999999;
+  
 }
 /* ==================================== MEDLEMSFORDELE SECTION ==================================== */
 .container2 {
@@ -472,6 +481,16 @@ footer {
   width: 100%;
   height: 100%;
   background-color: var(--overlay);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
 }
 .modal-text {
   width: 90%;
@@ -683,6 +702,18 @@ footer {
   overflow: hidden;
 }
 
+.glide__slides {
+  align-items: center;
+
+}
+
+.glide__slides img {
+  width: 100px;
+  filter: grayscale(50);
+}
+.glide__slides img:hover {
+  filter:grayscale(0);
+}
 @keyframes sponsor {
   0% {
     left: -100%;
@@ -691,110 +722,6 @@ footer {
   100% {
     left: 100%;
   }
-}
-
-/*.slick-slide {
-  margin: 0px 20px;
-}
-.slick-slide img {
-  width: 100%;
-}
-.slick-slider {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
-.slick-list {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  filter: grayscale();
-}
-.slick-list:hover {
-  filter: grayscale(0%);
-}
-.slick-list:focus {
-  outline: none;
-}
-.slick-list.dragging {
-  cursor: pointer;
-  cursor: hand;
-}
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-.slick-track {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-}
-.slick-track:before,
-.slick-track:after {
-  display: table;
-  content: "";
-}
-.slick-track:after {
-  clear: both;
-}
-.slick-loading .slick-track {
-  visibility: hidden;
-}
-
-.slick-slide {
-  display: none;
-  float: left;
-  height: 100%;
-  min-height: 1px;
-}
-[dir="rtl"] .slick-slide {
-  float: right;
-}
-.slick-slide img {
-  display: block;
-}
-.slick-slide.slick-loading img {
-  display: none;
-}
-.slick-slide.dragging img {
-  pointer-events: none;
-}
-.slick-initialized .slick-slide {
-  display: block;
-}
-.slick-loading .slick-slide {
-  visibility: hidden;
-}
-.slick-vertical .slick-slide {
-  display: block;
-  height: auto;
-  border: 1px solid transparent;
-}
-.slick-arrow.slick-hidden {
-  display: none;
-}*/
-/* --- SOME SECTION --- */
-.some-section {
-  background-image: url(../images/hero1.jpg);
-  background-repeat: no-repeat;
-  margin: auto;
-  height: auto;
 }
 /* ------------------------------------ CALENDER ----------------------*/
 .filter-buttons {
@@ -1076,11 +1003,7 @@ footer {
 
   /* ==================================== RESPONSIVE INDEX ==================================== */
 
-  .some-section {
-    background-size: cover;
-    background-position: center;
-    height: 630px;
-  }
+
 }
 
 /* ---------- grid container styling ---------- */
@@ -1113,141 +1036,50 @@ footer {
   box-shadow: var(--shadow);
   min-width: 250px;
 }
-/* ==================================== RESPONSIVE INDEX ==================================== */
-.widget_background {
-  background-image: url(../images/hero1.jpg);
-  height: 1200px;
+/* ==================================== SoMe SECTION ==================================== */
+.some-section {
+  background-image: url(../images/some-background.jpg);
   background-size: cover;
   background-position: center;
 }
-@media screen and (min-width: 600px) {
-  .widget_background {
-    /*background-image: url(../img/widget_background.jpg);*/
-    height: 640px;
-    background-size: cover;
-    background-position: center;
-  }
-}
-@media screen and (min-width: 992px) {
-  .widget_background {
-    /*background-image: url(../img/widget_background.jpg);*/
-    height: auto;
-    background-size: cover;
-    background-position: center;
-  }
-}
-.widget_grid-container {
-  display: -ms-grid;
-  display: grid;
-  height: 1200px;
-  padding: 50px 0;
-  /*-ms-grid-columns: 1fr;*/
-  grid-template-columns: 1fr;
-  /*-ms-grid-rows: 1fr 1fr;*/
-  grid-template-rows: 1fr 1fr;
-  gap: 20px 0px;
-  grid-template-areas:
-    "facebook_widget_grid"
-    "instagram_widget_grid";
+.some_flex {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
 }
 @media screen and (min-width: 600px) {
-  .widget_grid-container {
-    height: 640px;
-    /*-ms-grid-columns: 1fr 1fr;*/
-    grid-template-columns: 1fr 1fr;
-    /*-ms-grid-rows: 1fr;*/
-    grid-template-rows: 1fr;
-    grid-template-areas: "facebook_widget_grid instagram_widget_grid";
+  .some_flex {
+    flex-direction: row;
   }
 }
-@media screen and (min-width: 992px) {
-  .widget_grid-container {
-    margin: auto;
-    max-width: 750px;
-    height: auto;
-    gap: 20px;
-    /*-ms-grid-columns: 1fr 1fr;*/
-    grid-template-columns: 1fr 1fr;
-    /*-ms-grid-rows: 1fr;*/
-    grid-template-rows: 1fr;
-    grid-template-areas: "facebook_widget_grid instagram_widget_grid";
-  }
+.background_filter {
+  backdrop-filter: blur(2px) grayscale(0.8);
 }
-.facebook_widget_grid {
-  grid-row: 1;
-  grid-column: 1;
-  grid-area: facebook_widget_grid;
-  margin-bottom: 10px;
-}
-@media screen and (min-width: 600px) {
-  .facebook_widget_grid {
-    grid-row: 1;
-    grid-column: 1;
-    grid-area: facebook_widget_grid;
-    margin: auto;
-  }
-}
-@media screen and (min-width: 992px) {
-  .facebook_widget_grid {
-    grid-row: 1;
-    grid-column: 1;
-    grid-area: facebook_widget_grid;
-    margin: auto;
-  }
-}
-.instagram_widget_grid {
-  grid-row: 2;
-  grid-column: 1;
-  grid-area: instagram_widget_grid;
-}
-@media screen and (min-width: 600px) {
-  .instagram_widget_grid {
-    grid-row: 1;
-    grid-column: 2;
-    grid-area: instagram_widget_grid;
-    margin: auto;
-  }
-}
-@media screen and (min-width: 992px) {
-  .instagram_widget_grid {
-    grid-row: 1;
-    grid-column: 2;
-    grid-area: instagram_widget_grid;
-    margin: auto;
-  }
-}
-.facebook_widget,
-.snapwidget-widget {
-  display: block;
-  margin: auto;
-  width: 318px;
-  height: 476px !important;
-  border: 4px var(--primary-green-opacity);
-  overflow: hidden;
+.instagram_widget_grid, .facebook_widget_grid{
+  box-shadow: var(--shadow);
+  border: 4px solid rgb(85, 126, 84, 0.1);
   background-color: var(--primary-green-opacity);
+  display: block;
+  margin: 50px auto;
+  height: 400px
+}
+@media screen and (min-width: 992px) {
+  .instagram_widget_grid:hover {
+    background-color: var(--primary-gray-opacity);
+    border: 4px solid rgb(112, 112, 112), 0.1;
+  }
+  .facebook_widget_grid:hover {
+    background-color: var(--primary-gray-opacity);
+    border: 4px solid rgb(112, 112, 112), 0.1;
+  }
 }
 .widget_text {
   text-align: center;
-  background-color: var(--primary-green-opacity);
-  backdrop-filter: blur(2px);
-
-  border-bottom: none;
-  width: 318px;
-  height: 45px;
-  margin: auto;
+  width: 280px;
   padding: 10px;
   color: var(--primary-white);
 }
-@media screen and (min-width: 600px) {
-  .widget_text {
-    border-bottom: none;
-  }
-}
-@media screen and (min-width: 992px) {
-  .widget_text {
-    padding: 2px;
-  }
-  .widget_text:hover {
-    background-color: var(--primary-gray-opacity);
-  }
-}
+

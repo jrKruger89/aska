@@ -12,6 +12,8 @@ import {
 
 let _selectedImgFile = "";
 
+import Glide from "https://cdn.skypack.dev/@glidejs/glide";
+
 export default class Sponsor {
   constructor() {
     this.sponsorRef = collection(_db, "sponsors");
@@ -28,7 +30,8 @@ export default class Sponsor {
         sponsor.id = doc.id;
         return sponsor;
       });
-      this.appendSponsors(this.sponsors);
+      //this.appendSponsors(this.sponsors);
+      initSlider(this.sponsors);
     });
   }
 
@@ -80,4 +83,32 @@ export default class Sponsor {
     const docRef = doc(this.sponsorRef, id);
     deleteDoc(docRef);
   }
+}
+
+function initSlider(sponsors) {
+  let htmlTemplate = "";
+  for (const sponsor of sponsors) {
+    htmlTemplate += /*html*/ `
+		<li class="glide__slide">
+    <img src="${sponsor.img}">
+		</li>
+    `;
+  }
+  document.querySelector("#sponsor-slider").innerHTML = htmlTemplate;
+
+  new Glide(".glide", {
+    type: "carousel",
+    autoplay: 3000,
+    hoverpause: false,
+    rewind: true,
+    perView: 6,
+    breakpoints: {
+      600: {
+        perView: 3,
+      },
+      992: {
+        perView: 5,
+      },
+    },
+  }).mount();
 }

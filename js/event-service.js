@@ -77,6 +77,7 @@ export default class Event {
       const checkedValues = [...document.querySelectorAll(".eventCheckBox")]
         .filter((input) => input.checked)
         .map((input) => input.value);
+      console.log(checkedValues);
       const result = this.events.filter((item) => {
         if (item.category.some((tag) => tag == checkedValues)) {
           return item;

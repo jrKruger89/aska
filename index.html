@@ -5,21 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="images/fav_icon.svg" type="image/x-icon" />
-
     <title>Forside | ASKA</title>
-
-    <!-- sponsor slider -->
-    <script
-      src="https://code.jquery.com/jquery-2.2.0.min.js"
-      type="text/javascript"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- sponsor slider slut -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css"
+    integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css" />
     </head>
@@ -55,9 +44,10 @@
       <div class="hero-wrapper">
         <section class="frontpage-hero hero1" onload="showSlide('0')">
           <div class="page-padding">
-            <p class="hero-text white">111111111</p>
+            <div class="background_filter_hero background_filter"></div>
+            <p class="hero-text white">ASKA er en islænderklub for alle med passion for den islandske hest – og som gerne vil dele glæden med andre. Din passion kan både være stævner, skovture, banetræning, horsemanship – eller det, som giver dig glæde med din hest.</p>
             <a href="">
-              <button id="hero-btn" class="hero-read-more button1 green">
+              <button id="hero-btn" class=" hero-read-more button1 green">
                 111111111
               </button>
             </a>
@@ -83,7 +73,6 @@
             </a>
           </div></div>
         </section>
-
         <!-- ==================================== HERO BUTTON SECTION ==================================== -->
         <section class="button-section">
           <a href="pages/bliv-en-del-af-aska.html">
@@ -106,7 +95,6 @@
           </a>
         </section>
       
-
       <!-- ==================================== MEDLEMSFORDELE ==================================== -->
       <section class="medlemsfordele">
         <h2>Medlemsfordele</h2>
@@ -334,6 +322,7 @@
 
       <!-- ==================================== HURTIG LINKS SECTION ==================================== -->
       <div class="whitespace"></div>
+      <div class="whitespace"></div>
       <h2 class="hurtiglinks">Hurtig links</h2>
       <div class="whitespace"></div>
       <section class="button-section2">
@@ -369,39 +358,22 @@
           <div class="whitespace"></div>
         </div>
       </section>
-      <div class="greenspace"></div>
+      
       <!-- ==================================== SPONSOR SECTION ==================================== -->
+      <div class="greenspace"></div>
       <section class="sponsorer">
         <h2>Tak til ASKA sponsorer</h2>
         <div class="whitespace"></div>
-        <!-- <div class="sponsor_logo_container">
+        <div class="sponsor_logo_container">
           <section class="sponsor-logos slider">
-            
-           
-            <div class="slide">
-              <img
-                src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"
-              />
+            <div class="glide">
+              <div data-glide-el="track" class="glide__track">
+                <ul class="glide__slides" id="sponsor-slider">
+                </ul>
+              </div>
             </div>
-            <div class="slide">
-              <img
-                src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"
-              />
-            </div>
-            <div class="slide">
-              <img
-                src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"
-              />
-            </div>
-            
           </section>
         </div>
-        -->
-
-          <div class="sponsor_logo_container">
-            <div class="sponsor_flex">
-               
-         </div>
         </div>
           <form id="sponsorForm">
             <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
@@ -417,30 +389,32 @@
         </div>
         <div class="whitespace"></div>
       </section>
-      <!-- ==================================== SOME SECTION ==================================== 
+      <!-- ==================================== SoMe SECTION ==================================== -->
+      <div class="greenspace"></div>      
       <section class="some-section">
-        <div class="widget_background">
-          <div class="widget_grid-container">
+        <div class="background_filter">
+        <div class="some_flex"
+            <!-- facebook -->
               <section class="facebook_widget_grid">
                   <a href="https://www.facebook.com/groups/1389413571362415" target="_blank">
                       <h4 class="white_text widget_text">Følg os på vores Facebook-side</h4>
                   </a>
-                  <iframe src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F1389413571362415%2F&width=280&show_metadata=true&height=324&appId" width="280" height="324" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                  <iframe src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F1389413571362415&width=280&show_metadata=true&appId=450915069787219&height=326" width="280" height="325" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
               </section>
+              <!-- instagram -->
               <section class="instagram_widget_grid">
                   <a href="https://www.instagram.com/islaenderklubben_aska/" target="_blank">
                       <h4 class="white_text widget_text">Følg os på vores Instagram-side</h4>
                   </a>
                   <script src="https://snapwidget.com/js/snapwidget.js"></script>
-                  <!-- SnapWidget -->
-                  <!-- SnapWidget -->
-                  <!--<iframe src="https://snapwidget.com/embed/976053" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+                  <iframe src="https://snapwidget.com/embed/976053" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:280px; "></iframe>
               </section>
+            </div>
           </div>
-      </div>
-      </section>
+    </section>
     </main>
     <!-- ==================================== FOOTER ==================================== -->
+    <div class="greenspace"></div> 
     <footer>
       <div class="flex">
         <div class="flex_content text_left_desktop">

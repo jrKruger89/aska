@@ -1,15 +1,5 @@
 "use strict";
 
-import Event from "./event-service.js";
-let _event = new Event();
-
-import Sponsor from "./sponsor-service.js";
-let _sponsor = new Sponsor();
-
-document.querySelector("#btn-create").onclick = () => createSponsor();
-window.previewImage = (file, previewId) =>
-  _sponsor.previewImage(file, previewId);
-window.createSponsor = () => _sponsor.createSponsor();
 /**
  * Toggle menu for mobile devices
  */
@@ -21,9 +11,24 @@ let toggleMenu = () => {
   navlist.classList.toggle("menu-open");
 };
 
+// Import Event class functions ==========================================
+import Event from "./event-service.js";
+let _event = new Event();
+
 window.toggleMenu = () => toggleMenu();
 window.search = (value) => _event.search(value);
 window.showDetailView = (id) => _event.showDetailView(id);
+
+// Import Sponsor class functions ======================================
+import Sponsor from "./sponsor-service.js";
+let _sponsor = new Sponsor();
+
+document.querySelector("#btn-create").onclick = () => createSponsor();
+window.previewImage = (file, previewId) =>
+  _sponsor.previewImage(file, previewId);
+window.createSponsor = () => _sponsor.createSponsor();
+
+// Hero button section ==================================================
 
 try {
   document.querySelector(".button-section").scrollLeft = 80;
@@ -31,34 +36,7 @@ try {
   console.error();
 }
 
-/* sponsor slider */
-$(document).ready(function () {
-  $(".sponsor-logos").slick({
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1500,
-    arrows: false,
-    dots: false,
-    pauseOnHover: false,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 520,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  });
-});
-
-// Hero Slider
+// Hero Slider ===========================================================
 
 let slideSections;
 let activeSlide = 0;
