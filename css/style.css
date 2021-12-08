@@ -1,3 +1,4 @@
+/* ==================================== GENERAL ==================================== */
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap");
 :root {
   --primary-black: #000000;
@@ -26,9 +27,27 @@ html {
 main {
   background-color: var(--primary-white);
 }
-/* ==================================== GENERAL ==================================== */
 h1 {
   display: none;
+}
+h2{
+  font-family: var(--primary-heading);
+  font-size: 25px;
+}
+@media screen and (min-width: 600px) {
+  h2{
+    font-size: 35px;
+  }
+}
+h3{
+  font-family: var(--primary-heading);
+  font-size: 20px;
+  line-height: normal;
+}
+@media screen and (min-width: 600px) {
+  h3{
+    font-size: 25px;
+  }
 }
 h4 {
   font-size: 20px;
@@ -39,24 +58,20 @@ h4 {
     font-size: 22px;
   }
 }
+h5 {
+  font-size: 15px;
+  font-family: var(--primary-text);
+  line-height: 25px;
+}
+@media screen and (min-width: 600px) {
+  h5 {
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
 h6 {
   font-family: var(--primary-heading);
   font-size: 12px;
-}
-h2,
-h3,
-h5 {
-  font-family: var(--primary-heading);
-  font-size: 20px;
-  line-height: normal;
-}
-@media screen and (min-width: 600px) {
-  h1,
-  h2,
-  h3,
-  h5 {
-    font-size: 25px;
-  }
 }
 p {
   font-family: var(--primary-text);
@@ -78,6 +93,9 @@ a {
 @media screen and (min-width: 600px) {
   a {
     font-size: 17px;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 }
 .page-padding {
@@ -102,6 +120,17 @@ a {
   box-shadow: var(--shadow);
   cursor: pointer;
 }
+@media screen and (min-width: 992px) {
+  .button1 {
+    border-radius: 20px;
+    width: 180px;
+    height: 50px;
+    font-size: 22px;
+  }
+  .button1:hover {
+    background-color: var(--primary-gray);
+  }
+}
 .button2 {
   /* firkantede knapper */
   width: 100%;
@@ -109,6 +138,10 @@ a {
   border: none;
   box-shadow: var(--shadow);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 @media screen and (min-width: 992px) {
   .button2 {
@@ -132,7 +165,6 @@ a {
 @media screen and (min-width: 992px) {
   .btn-text1 {
     font-size: 80px;
-    line-height: 80px;
   }
   .btn-text2 {
     font-size: 40px;
@@ -140,20 +172,22 @@ a {
 }
 .button3 {
   /* grid knapper */
-  width: 160px;
-  height: 70px;
+  width: 100%;
+  height: 50px;
   font-family: var(--primary-heading);
   border: none;
   box-shadow: var(--shadow);
   background-color: var(--primary-green-opacity);
-  backdrop-filter: blur(2px);
   color: var(--primary-white);
   cursor: pointer;
 }
 @media screen and (min-width: 600px) {
   .button3 {
     width: 100%;
-    height: 60px;
+    height: 40px;
+  }
+  .button3:hover {
+    background-color: var(--primary-gray-opacity);
   }
 }
 .button4 {
@@ -166,6 +200,17 @@ a {
   border: none;
   box-shadow: var(--shadow);
   cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  .button4 {
+    border-radius: 20px;
+    width: 180px;
+    height: 45px;
+    font-size: 18px;
+  }
+  .button4:hover {
+    background-color: var(--primary-gray);
+  }
 }
 .green {
   color: var(--primary-white);
@@ -193,6 +238,11 @@ a {
   right: 15px;
   top: 25px;
   cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  .burger {
+    display: none;
+  }
 }
 .line {
   background-color: var(--secondary-black);
@@ -227,8 +277,9 @@ header {
   position: fixed;
   top: 0;
   width: 100vw;
-  height: 72px;
+  height: 73px;
   z-index: 999;
+  border-bottom: 6px solid var(--primary-green);
 }
 .logo {
   margin: 5px;
@@ -237,25 +288,62 @@ header {
   position: absolute;
   z-index: 3;
 }
-.divider {
-  position: absolute;
-  top: 66px;
-  background-color: var(--primary-green);
-  width: 100vw;
-  height: 6px;
+@media screen and (min-width: 992px) {
+  .logo {
+    margin: 10px;
+    width: 175px;
+  }
 }
+
 .nav-list {
   display: none;
   text-align: center;
   background: var(--primary-white);
   padding: 100px 0 0 0;
-  height: 340px;
+  height: 500px;
+  box-shadow: var(--shadow);
+}
+@media screen and (min-width: 992px) {
+  header {
+    display: flex;
+    border-bottom: 5px solid var(--primary-green);
+  }
+  header > a {
+    width: 175px;
+  }
+nav {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+  .nav-list {
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+  }
+  .nav-list:last-child {
+    margin: 0 20px 0 0;
+  }
 }
 .nav-link {
   font-family: var(--primary-heading);
   font-size: 1.4em;
-  margin: 15px 15px 0 15px;
+  margin: 0 15px;
+  padding: 25px 0;
   border-bottom: 1px solid var(--primary-green);
+}
+@media screen and (min-width: 992px) {
+  .nav-link {
+    border: none;
+  }
 }
 .menu-open {
   display: block;
@@ -277,6 +365,12 @@ footer {
     flex-direction: row;
     align-items: flex-start;
     line-height: 34px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
 }
 .flex_content {
@@ -318,11 +412,10 @@ footer {
     text-align: left;
   }
 }
-
-/* ==================================== INDEX ==================================== */
+/* ==================================== HERO INDEX PAGE ==================================== */
 .frontpage-hero {
   background-position: top;
-  height: 80vh;
+  height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -340,20 +433,23 @@ footer {
     opacity: 1;
   }
 }
-
+@media screen and (min-width: 600px) {
+  .frontpage-hero{
+    height: 100vh;
+  }
+}
 .hero1 {
-  background-image: url(../images/hero1.jpg);
+  background-image: url(../images/hero1_optimized.jpg);
 }
 .hero2 {
-  background-image: url(../images/hero2.png);
+  background-image: url(../images/dias2_optimized.png);
 }
 .hero3 {
-  background-image: url(../images/hero3.jpg);
+  background-image: url(../images/dias3_optimized.jpg);
 }
-
 .hero-wrapper {
   position: relative;
-  height: 80vh;
+  height: 90vh;
 }
 @media screen and (min-width: 600px) {
   .hero-wrapper {
@@ -362,19 +458,24 @@ footer {
 }
 .hero-text {
   transition: 4s ease-in-out content;
-  width: 65%;
+  width: 95%;
   margin: 0 auto 20px auto;
   text-shadow: var(--primary-black) 1px 0 10px;
 }
 .hero-section {
-  height: 80vh;
+  height: 90vh;
 }
 .background_filter_hero{
-  height: 80vh;
-  z-index: 999999999;
-  
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-/* ==================================== MEDLEMSFORDELE SECTION ==================================== */
+/* ==================================== MEDLEMSFORDELE SECTION INDEX PAGE ==================================== */
 .container2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -400,13 +501,14 @@ footer {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 20px 20px;
     grid-template-areas:
-      "ostanlaegget teigar-rideudstyr klubdage klubdage"
-      "ostanlaegget staevner staevner pet-house"
-      "ostanlaegget saxild saxild pet-house"
-      "ostanlaegget saxild saxild pet-house";
+    "ostanlaegget pet-house teigar-rideudstyr teigar-rideudstyr"
+    "ostanlaegget saxild saxild klubdage"
+    "ostanlaegget staevner staevner klubdage"
+    "ostanlaegget staevner staevner klubdage";
   }
 }
 .grid-img {
+  position: relative;
   background-position: center;
   height: 160px;
   width: 160px;
@@ -423,9 +525,35 @@ footer {
     height: 100%;
   }
 }
+.reduceret-pris_img{
+width: 100%;
+} 
+.gratis-benyttelse_img{
+height: 100%;
+
+}
+.saxild_img{
+width: 100%;
+}
+.pet-house_img{
+width: 100%;
+}
+.teigar_img{
+height: 100%;
+}
+.ostanlaegget_img{
+  height: 100%;
+}
 .ostanlaegget {
   grid-area: ostanlaegget;
-  background-image: url(../images/fav_icon.svg);
+  overflow: hidden;
+}
+.container2 button {
+  z-index: 4;
+}
+.grid-img img {
+  filter: grayscale(20);
+  position: absolute;
 }
 @media screen and (min-width: 600px) {
   .ostanlaegget {
@@ -434,7 +562,7 @@ footer {
 }
 .teigar-rideudstyr {
   grid-area: teigar-rideudstyr;
-  background-image: url(../images/fav_icon.svg);
+  overflow: hidden;
 }
 @media screen and (min-width: 600px) {
   .teigar-rideudstyr {
@@ -443,7 +571,7 @@ footer {
 }
 .klubdage {
   grid-area: klubdage;
-  background-image: url(../images/fav_icon.svg);
+  overflow: hidden;
 }
 @media screen and (min-width: 600px) {
   .klubdage {
@@ -452,7 +580,7 @@ footer {
 }
 .staevner {
   grid-area: staevner;
-  background-image: url(../images/fav_icon.svg);
+  overflow: hidden;
 }
 @media screen and (min-width: 600px) {
   .staevner {
@@ -461,7 +589,7 @@ footer {
 }
 .pet-house {
   grid-area: pet-house;
-  background-image: url(../images/fav_icon.svg);
+  overflow: hidden;
 }
 @media screen and (min-width: 600px) {
   .pet-house {
@@ -470,7 +598,7 @@ footer {
 }
 .saxild {
   grid-area: saxild;
-  background-image: url(../images/fav_icon.svg);
+  overflow: hidden;
 }
 @media screen and (min-width: 600px) {
   .saxild {
@@ -510,14 +638,6 @@ footer {
 .modal-text-p {
   overflow: scroll;
   height: 200px;
-  width: 80%;
-  margin: auto;
-  font-size: 16px;
-}
-@media screen and (min-width: 600px) {
-  .modal-text-p {
-    font-size: 18px;
-  }
 }
 .modal span {
   font-size: 50px;
@@ -551,23 +671,22 @@ footer {
     gap: 10px;
   }
 }
-@media screen and (min-width: 600px) {
-  .modal p {
-    width: 60%;
-    margin: auto;
-  }
+.modal-content{
+ padding: 0 20px;
 }
-
-/* ==================================== HERO BUTTON SECTION ==================================== */
+/* ==================================== HERO BUTTON SECTION INDEX PAGE ==================================== */
+.button-section a{
+  text-decoration: none;
+}
 .button-section {
   display: grid;
   grid-template-columns: repeat(3, 40vw);
   overflow: scroll;
-  gap: 40px;
+  gap: 30px;
   scroll-snap-type: x mandatory;
   position: relative;
   height: 210px;
-  margin-top: -75px;
+  margin-top: -60px;
 }
 @media screen and (min-width: 600px) {
   .button-section {
@@ -577,13 +696,16 @@ footer {
     justify-content: space-evenly;
     height: 275px;
     text-align: center;
-    margin-top: -45px;
+    margin-top: 120px;
   }
 }
 .button-section::-webkit-scrollbar {
   display: none;
 }
-/* ==================================== HURTIG LINKS SECTION ==================================== */
+.modal::-webkit-scrollbar {
+  display: none;
+}
+/* ==================================== HURTIG LINKS SECTION INDEX PAGE ==================================== */
 .hurtiglinks {
   text-align: center;
 }
@@ -603,7 +725,7 @@ footer {
 .medlemsfordele {
   text-align: center;
 }
-/* ==================================== VILHELMSBORG SECTION ==================================== */
+/* ==================================== VILHELMSBORG SECTION INDEX PAGE ==================================== */
 .vilhelmsborg {
   background-color: white;
 }
@@ -673,19 +795,17 @@ footer {
     padding: 15px 0;
   }
 }
-/* ==================================== SPONSOR SECTION ==================================== */
+/* ==================================== SPONSOR SLIDE SECTION INDEX PAGE ==================================== */
 .sponsorer {
   padding: 25px;
   text-align: center;
   background-color: white;
 }
-
 .sponsor_logo img {
   width: 100px !important;
   filter: grayscale(1);
   margin: 0 10px;
 }
-
 .sponsor_flex {
   display: flex;
   flex-direction: row;
@@ -696,17 +816,13 @@ footer {
   position: relative;
   animation-iteration-count: infinite;
 }
-
 .sponsor_logo_container {
   width: 100%;
   overflow: hidden;
 }
-
 .glide__slides {
   align-items: center;
-
 }
-
 .glide__slides img {
   width: 100px;
   filter: grayscale(50);
@@ -718,28 +834,52 @@ footer {
   0% {
     left: -100%;
   }
-
   100% {
     left: 100%;
   }
 }
-/* ------------------------------------ CALENDER ----------------------*/
-.filter-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 5px;
-  max-width: 100%;
-  height: 100%;
-  padding: 0 20px;
-}
+/* ==================================== EVENT CALENDAR PAGE ==================================== */
 .center {
   text-align: center;
 }
-@media screen and (min-width: 992px) {
+.event-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  gap: 1em;
+}
+@media (min-width: 600px) {
+  .event-grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .event-grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.event-grid-container > article {
+  text-align: center;
+  padding: 2em 1em;
+  background-color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  animation: fadeIn 0.4s;
+  box-shadow: var(--shadow);
+  min-width: 250px;
+}
+.filter-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 170px;
+  margin-left: 20px;
+}
+@media screen and (min-width: 600px) {
   .filter-buttons {
-    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    height: 40px;
   }
 }
 .filter-buttons > div > label {
@@ -757,28 +897,19 @@ footer {
   width: 25px;
   background-color: white;
   margin: 0 5px 0 0;
-  border: 1px solid var(--primary-black);
+  border: 3px solid var(--primary-green);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   transition: background 0.15s;
+  border-radius: 8px;
 }
 .checkbox_box::after {
-  content: "\2714";
   color: white;
 }
 .eventCheckBox:checked + .checkbox_box {
   background: var(--primary-green);
-}
-.grid-container > article {
-  text-align: center;
-  padding: 2em 1em;
-  background-color: var(--white);
-  transition: 0.3s;
-  cursor: pointer;
-  animation: fadeIn 0.4s;
-  box-shadow: var(--shadow);
 }
 .search-bar {
   width: 345px;
@@ -786,19 +917,15 @@ footer {
   display: block;
   margin: 20px auto 0 auto;
   font-family: var(--primary-text);
-  border: 1px solid var(--primary-black);
+  border: 3px solid var(--primary-green);
   box-shadow: var(--shadow);
+  border-radius: 25px;
+  padding: 20px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 600px) {
   .search-bar {
-    margin: 50px auto 0 auto;
+    margin: 20px auto 40px auto
   }
-}
-.modal_grid {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 25% 25% 50%;
-  width: 100%;
 }
 #calender-modal {
   position: fixed;
@@ -863,19 +990,17 @@ footer {
   }
 }
 .line5 {
-  width: 55%;
+  width: 30%;
   height: 2px;
   background-color: var(--primary-green);
-  margin: 10px auto;
+  margin: 10px 0;
 }
 @media screen and (min-width: 600px) {
   .line5 {
-    width: 60%;
-    margin: 25px auto;
+    width: 40%;
   }
 }
-
-/* ========================== loader styling =============================== */
+/* ========================== ASKA LOGO LOADER =============================== */
 #loader {
   position: fixed;
   left: 0px;
@@ -885,17 +1010,14 @@ footer {
   z-index: 9999999999;
   overflow: hidden;
   background: var(--overlay);
-
   text-align: center;
 }
-
 .spinner {
   background-image: url(../images/fav_icon.svg);
   background-repeat: no-repeat;
   width: 300px;
   height: 300px;
   -webkit-animation: fade 1s infinite;
-  /* Safari */
   animation: fade 1s infinite;
   display: inline-block;
   vertical-align: middle;
@@ -906,13 +1028,11 @@ footer {
   bottom: 0;
   left: 0;
 }
-
 .hide {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
-
 @keyframes fade {
   0% {
     opacity: 0;
@@ -925,118 +1045,7 @@ footer {
     opacity: 0;
   }
 }
-
-/* ==================================== RESPONSIVE ==================================== */
-@media screen and (min-width: 1024px) {
-  .burger {
-    display: none;
-  }
-  .logo {
-    margin: 10px;
-    width: 175px;
-  }
-  .divider {
-    top: 72px;
-  }
-  .nav-list {
-    list-style-type: none;
-    position: absolute;
-    top: 0;
-    left: 200px;
-    width: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
-    height: fit-content;
-    padding: 10px 0;
-  }
-  .nav-link {
-    font-size: 1.4em;
-    border: none;
-  }
-  .flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
-  }
-  .contact {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-  }
-  .quick-links {
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-  }
-
-  /* ==================================== RESPONSIVE - GENERAL ==================================== */
-  .button1 {
-    border-radius: 20px;
-    width: 180px;
-    height: 50px;
-    font-size: 22px;
-  }
-
-  .button4 {
-    border-radius: 20px;
-    width: 180px;
-    height: 45px;
-    font-size: 18px;
-  }
-  .button1:hover {
-    background-color: var(--primary-gray);
-  }
-
-  .button3:hover {
-    background-color: var(--primary-gray-opacity);
-  }
-  .button4:hover {
-    background-color: var(--primary-gray);
-  }
-
-  /* ==================================== RESPONSIVE INDEX ==================================== */
-
-
-}
-
-/* ---------- grid container styling ---------- */
-.event-grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 1em;
-  gap: 1em;
-}
-@media (min-width: 600px) {
-  .event-grid-container {
-    grid-template-columns: 1fr 1fr;
-    /*.event-grid-container > article:hover {
-    box-shadow: 0 8px 16px 0 var(--secondary-black);
-    }*/
-  }
-}
-@media (min-width: 992px) {
-  .event-grid-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-.event-grid-container > article {
-  text-align: center;
-  padding: 2em 1em;
-  background-color: white;
-  transition: 0.3s;
-  cursor: pointer;
-  animation: fadeIn 0.4s;
-  box-shadow: var(--shadow);
-  min-width: 250px;
-}
-/* ==================================== SoMe SECTION ==================================== */
+/* ==================================== SoMe SECTION INDEX PAGE ==================================== */
 .some-section {
   background-image: url(../images/some-background.jpg);
   background-size: cover;
@@ -1057,6 +1066,9 @@ footer {
 }
 .background_filter {
   backdrop-filter: blur(2px) grayscale(0.8);
+}
+.background_filter_hero {
+  backdrop-filter: blur(0) grayscale(0.8);
 }
 .instagram_widget_grid, .facebook_widget_grid{
   box-shadow: var(--shadow);
@@ -1082,4 +1094,227 @@ footer {
   padding: 10px;
   color: var(--primary-white);
 }
+/* ==================================== CONTAINER3 SECTION ==================================== */
+.container3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 0 15px;
+  margin: 0 auto;
+  gap: 30px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "a b"
+    "c d"
+    "e f"
+    "g g";
+}
 
+.a { 
+  grid-area: a;
+  width: 95%;
+  margin-right: 5%; 
+}
+.b { 
+  grid-area: b; 
+  width: 95%;
+  margin-left: 5%; 
+}
+.c { 
+  grid-area: c;
+  width: 95%;
+  margin-right: 5%; 
+}
+.d { 
+  grid-area: d; 
+  width: 95%;
+  margin-left: 5%;
+}
+.e { 
+  grid-area: e; 
+  width: 95%;
+  margin-right: 5%; 
+}
+.f { 
+  grid-area: f; 
+  width: 95%;
+  margin-left: 5%;
+}
+.g { grid-area: g; 
+width: 100%;
+}
+
+.om-aska .a{
+  background-image: url(../images/aska-udvalg_optimized.jpg);
+  background-position: right;
+}
+.om-aska .b{
+  background-image: url(../images/logo_aska.svg);
+}
+.om-aska .c{
+  background-image: url(../images/hero1_optimized.jpg);
+}
+.om-aska .d{
+  background-image: url(../images/aska-vedtaegter_optimized.jpg);
+  background-position-y: 70%;
+}
+.om-aska .e{
+  background-image: url(../images/bliv-staldambassador_optimized.jpg);
+}
+.om-aska .f{
+  background-image: url(../images/aska-værdier_optimized.jpg);
+  background-position-y: 30%;
+}
+.om-aska .g{
+  background-image: url(../images/kontakt_optimized.jpg);
+}
+.modal-text3 {
+  width: 85%;
+  height: auto;
+  background-color: var(--primary-white);
+  margin: 0 auto;
+  color: var(--primary-black);
+  border-radius: 20px;
+  border: 5px solid var(--primary-green);
+  grid-row: 2/3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+@media screen and (min-width: 992px) {
+  .modal-text3 {
+    width: 65%;
+    height: auto;
+  }
+}
+@media (min-width: 600px){
+.container3 {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  width: 80%;
+  height: 60vh;
+  gap: 20px 20px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "a b c c"
+    "a d d e"
+    "a f f e"
+    "a f f e"
+    "g g g g";
+
+}
+.a { 
+  grid-area: a;
+  width: 100%;
+  margin: 0;
+}
+
+.c { 
+  grid-area: c;
+  width: 100%; 
+  margin: 0;
+}
+
+.d { 
+  grid-area: d; 
+  width: 100%;
+  margin: 0;
+}
+
+.b { 
+  grid-area: b; 
+  width: 100%;
+  margin: 0;
+}
+
+.e { 
+  grid-area: e; 
+  width: 100%;
+  margin: 0;
+}
+
+.f { 
+  grid-area: f; 
+  width: 100%;
+  margin: 0;
+}
+
+.g { grid-area: g; }
+}
+.modal-img{
+  height: 100px;
+  background-size: cover;
+  border-radius: 0 0 13px 13px;
+}
+#calender-modal2 .modal-img{
+  mask-image: url(../images/aska-udvalg_optimized.jpg);
+  background-image: url(../images/aska-udvalg_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 65%;
+}
+#calender-modal3 .modal-img{
+  mask-image: url(../images/logo_aska.svg);
+  background-image: url(../images/logo_aska.svg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 45%;
+}
+#calender-modal4 .modal-img{
+  mask-image: url(../images/hero1_optimized.jpg);
+  background-image: url(../images/hero1_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 35%;
+}
+#calender-modal5 .modal-img{
+  mask-image: url(../images/aska-vedtaegter_optimized.jpg);
+  background-image: url(../images/aska-vedtaegter_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 75%;
+}
+#calender-modal6 .modal-img{
+  mask-image: url(../images/bliv-staldambassador_optimized.jpg);
+  background-image: url(../images/bliv-staldambassador_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 55%;
+}
+#calender-modal7 .modal-img{
+  mask-image: url(../images/aska-værdier_optimized.jpg);
+  background-image: url(../images/aska-værdier_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 30%;
+}
+#calender-modal8 .modal-img{
+  mask-image: url(../images/kontakt_optimized.jpg);
+  background-image: url(../images/kontakt_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 65%;
+}

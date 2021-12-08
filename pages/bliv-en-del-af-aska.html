@@ -19,7 +19,6 @@
       <a href="../index.html"
         ><img src="../images/logo_aska.svg" alt="ASKA logo" class="logo"
       /></a>
-      <div class="divider"></div>
       <div class="burger" onclick="toggleMenu()">
         <div class="line line1"></div>
         <div class="line line2"></div>
@@ -37,55 +36,136 @@
     </header>
     <main>
       <h1></h1>
+
       <div class="page-padding center">
-        <h2>Bliv en del af ASKA</h2>
+        <h2>Om ASKA</h2>
+      </div>
+
+      <div class="container3 om-aska">
+        <!------  ASKAS UDVALG -------->
+        <div class="a grid-img">
+          <button
+            onclick="document.getElementById('modal7').style.display='block'"
+            class="button3"
+          >
+            ASKA's udvalg
+          </button>
+        </div>
+
+        <!------  ASKAS BESTYRELSE -------->
+        <div class="b">
+          <button
+            onclick="document.getElementById('modal8').style.display='block'"
+            class="button3"
+          >
+            ASKA's bestyrelse
+          </button>
+        </div>
+
+        <!------  ASKAS STALDAMBASSADØRER -------->
+        <div class="c">
+          <button
+            onclick="document.getElementById('modal9').style.display='block'"
+            class="button3"
+          >
+            ASKA's staldambassadører
+          </button>
+        </div>
+
+        <!------  ASKAS VÆRDIER -------->
+        <div class="d">
+          <button
+            onclick="document.getElementById('modal10').style.display='block'"
+            class="button3"
+          >
+            ASKA's værdier
+          </button>
+        </div>
+
+        <!------  ASKAS VEDTÆGTER -------->
+        <div class="e">
+          <button
+            onclick="document.getElementById('modal11').style.display='block'"
+            class="button3"
+          >
+            ASKA's vedtægter
+          </button>
+        </div>
+
+        <!------  ASKAS LOGO -------->
+        <div class="f">
+          <button
+            onclick="document.getElementById('modal12').style.display='block'"
+            class="button3"
+          >
+            ASKA's logo
+          </button>
+        </div>
+
+        <!------  KONTAKT -------->
+        <div class="g">
+          <button
+            onclick="document.getElementById('modal13').style.display='block'"
+            class="button3"
+          >
+            Kontakt
+          </button>
+        </div>
       </div>
     </main>
-    <!------ FOOTER -------->
+
+    <!-- ==================================== FOOTER ==================================== -->
+    <div class="greenspace"></div>
     <footer>
       <div class="flex">
-        <section class="contact">
+        <div class="flex_content text_left_desktop">
           <h3>Kontakt ASKA</h3>
           <p class="address">Vilhelmsborgvej 1, 8320 Mårslet</p>
           <a href="mailto:aska.bestyrelse@gmail.com"
             >aska.bestyrelse@gmail.com</a
           >
-        </section>
-        <section class="social">
+        </div>
+        <div class="flex_content">
           <h3>Følg ASKA på de sociale medier:</h3>
           <div class="some-icons">
-            <a href="https://www.instagram.com/islaenderklubben_aska/"
-              ><span
+            <a href="https://www.instagram.com/islaenderklubben_aska/">
+              <span
                 class="iconify"
                 data-icon="brandico:instagram-filled"
-              ></span
-            ></a>
-            <a href="https://www.facebook.com/groups/1389413571362415/"
-              ><span class="iconify" data-icon="brandico:facebook-rect"></span
-            ></a>
+              ></span>
+            </a>
+            <a href="https://www.facebook.com/groups/1389413571362415/">
+              <span class="iconify" data-icon="brandico:facebook-rect"></span>
+            </a>
           </div>
-        </section>
-        <section class="quick-links">
+        </div>
+        <div class="flex_content text_right_desktop">
           <h3>Hurtig links</h3>
-          <a href="" class="quick-link">Bliv medlem </a>
-          <a href="" class="quick-link">Bliv sponsor</a>
-          <a
-            href="https://wondersport.dk/profilshop/aska.html?fbclid=IwAR1_ZgWV__yaSggiRXDUpxJQ_WTyYtMhbWpxqYBJVCeP5nvUFw3OyEjExpU"
-            class="quick-link"
-            >Bestil klubtøj</a
-          >
-          <a href="" class="quick-link">Tilmeld nyhedsbrev</a>
-          <a href="" class="quick-link">For administrator</a>
-        </section>
+          <p>
+            <a href="">Bliv medlem</a>
+          </p>
+          <p>
+            <a href="">Bliv sponsor</a>
+          </p>
+          <p>
+            <a
+              href="https://wondersport.dk/profilshop/aska.html?fbclid=IwAR1_ZgWV__yaSggiRXDUpxJQ_WTyYtMhbWpxqYBJVCeP5nvUFw3OyEjExpU"
+              >Bestil klubtøj</a
+            >
+          </p>
+          <p>
+            <a href="">For administrator</a>
+          </p>
+        </div>
       </div>
-      <h6 class="copyright">
-        © Copyright 2021 Maja Wennerwald, Camilla Nørgaard & Jesper Krüger. All
-        rights reserved.
-      </h6>
+      <div>
+        <h6 class="copyright">
+          © Copyright 2021 Maja Wennerwald, Camilla Nørgaard & Jesper Krüger.
+          All rights reserved.
+        </h6>
+      </div>
     </footer>
     <script src="../js/main.js" type="module"></script>
-
-    <div id="fb-root"></div>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
   </body>
 </html>

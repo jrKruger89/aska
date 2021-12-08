@@ -44,7 +44,7 @@ let activeSlide = 0;
 document.addEventListener("DOMContentLoaded", () => {
   slideSections = document.querySelectorAll(".frontpage-hero");
 
-  showSlide(1);
+  showSlide(0);
   setInterval(() => setActiveSlide(), 10000);
 });
 
