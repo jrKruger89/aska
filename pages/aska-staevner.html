@@ -11,14 +11,14 @@
     />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Stævner</title>
+    <title>Stævner | ASKA</title>
   </head>
   <body>
-    <!-------------- Navigation -------------->
+    <!-- ==================================== NAVIGATION ==================================== -->
     <header>
-      <a href="../index.html"
-        ><img src="../images/logo_aska.svg" alt="ASKA logo" class="logo"
-      /></a>
+      <a href="../index.html">
+        <img src="../images/logo_aska.svg" alt="ASKA logo" class="logo" />
+      </a>
       <div class="burger" onclick="toggleMenu()">
         <div class="line line1"></div>
         <div class="line line2"></div>
@@ -27,31 +27,350 @@
       <nav>
         <ul class="nav-list">
           <a href="../index.html"><li class="nav-link">Forside</li></a>
-          <a href="#"><li class="nav-link">Kalender</li></a>
+          <a href="kalender.html"><li class="nav-link">Kalender</li></a>
           <a href="om-aska.html"><li class="nav-link">Om ASKA</li></a>
           <a href="bliv-en-del-af-aska.html"
             ><li class="nav-link">Bliv en del af ASKA</li></a
           >
-          <a href="aska-ungdom.html"><li class="nav-link">ASKA Ungdom</li></a>
+          <a href="aska-staevner.html"
+            ><li class="nav-link">ASKA Stævner</li></a
+          >
         </ul>
       </nav>
     </header>
+    <!-- ==================================== MAIN ==================================== -->
     <main>
       <h1></h1>
       <div class="page-padding center">
         <h2>ASKA Stævner</h2>
       </div>
-      <div class="container3">
-        <div class="a"></div>
-        <div class="c"></div>
-        <div class="d"></div>
-        <div class="b"></div>
-        <div class="e"></div>
-        <div class="f"></div>
-        <div class="g"></div>
+      <div class="whitespace"></div>
+
+      <div class="container3 aska-staevner">
+        <!------ OM ASKA STÆVNER  -------->
+        <div class="a grid-img">
+          <button
+            onclick="document.getElementById('calender-modal16').style.display='block'"
+            class="button3"
+          >
+            Om ASKA Stævner
+          </button>
+        </div>
+
+        <div id="calender-modal16" class="modal">
+          <img
+            class="calender-modal-logo"
+            src="../images/fav_icon.svg"
+            alt=""
+          />
+          <div class="modal-text3">
+            <div class="flex2">
+              <span
+                onclick="document.getElementById('calender-modal16').style.display='none'"
+                >&times;</span
+              >
+            </div>
+            <div class="modal-content">
+              <h3>Om ASKA Stævner</h3>
+              <div class="line5 green"></div>
+              <p class="modal-text-p">
+                I ASKA er en meget vigtig del af klubbens formål at holde
+                stævner. Både for bredden og eliten. ASKA har siden klubbens
+                begyndelse haft et aktivt og entusiastisk stævneudvalg, og det
+                har vi stadig. <br /><br />
+
+                ASKA afholder stævner fordi:
+                <br /><br />
+                • Det en god måde for ASKA’s medlemmer at prøve muligheden for
+                stævnedeltagelse af på hjemmebane og i trygge rammer.
+                <br />
+                • Stævnerne giver et lille (eller større) økonomisk overskud.
+                Det er penge, der går i klubkassen, og som vi kan bruge til at
+                lave arrangementer, klubdage og events for klubbens medlemmer -
+                også for dig.
+                <br />
+                • Stævner er en god mulighed for at lære andre ASKA medlemmer at
+                kende som hjælper til store eller små opgaver eller som
+                tilskuer, hvor du kan mødes med dine ASKA venner - enten dem som
+                du kender på forhånd, eller dem du møder undervejs.
+              </p>
+            </div>
+            <div class="modal-img"></div>
+          </div>
+        </div>
+
+        <!------  KONTAKT -------->
+        <div class="b grid-img">
+          <button
+            onclick="document.getElementById('calender-modal17').style.display='block'"
+            class="button3"
+          >
+            Kontakt
+          </button>
+        </div>
+
+        <div id="calender-modal17" class="modal">
+          <img
+            class="calender-modal-logo"
+            src="../images/fav_icon.svg"
+            alt=""
+          />
+          <div class="modal-text3">
+            <div class="flex2">
+              <span
+                onclick="document.getElementById('calender-modal17').style.display='none'"
+                >&times;</span
+              >
+            </div>
+            <div class="modal-content">
+              <h3>Kontakt</h3>
+              <div class="line5"></div>
+              <p class="modal-text-p">
+                Stævneudvalget består af: <br />
+                <br />
+                • Aimie Bjørnsholm <br />
+                • Christina Jønsby <br />
+                • Lisbet B Kierkegaard <br />
+                • Louise Elgaard <br />
+                • Mathilde Ladefoged Hansen <br />
+                • Pernille Maj Svendsen <br />
+                • Siri Fog <br />
+                • Trine Mejer
+                <br /><br />
+                Du kan altid kontakte stævneudvalget på aska.staevne@gmail.com
+                eller vores FB side ASKA stævner.
+              </p>
+            </div>
+            <div class="modal-img"></div>
+          </div>
+        </div>
+
+        <!------  FØLG ASKA PÅ FB-------->
+        <div class="c grid-img">
+          <iframe
+            class="fb-page-widget mobile-widget"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FASKA-St%C3%A6vne-100173745456580&tabs=timeline&width=270&height=160&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=450915069787219"
+            width="270"
+            height="160"
+            style="border: none; overflow: hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          ></iframe>
+
+          <iframe
+            class="fb-page-widget desktop-widget"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FASKA-St%C3%A6vne-100173745456580&tabs=timeline&width=500&height=150&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=450915069787219"
+            width="500"
+            height="150"
+            style="border: none; overflow: hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          ></iframe>
+          <!--- <button
+            onclick="document.getElementById('calender-modal18').style.display='block'"
+            class="button3"
+          >
+            Følg ASKA Stævner på Facebook
+          </button>-->
+        </div>
+
+        <div id="calender-modal18" class="modal">
+          <img
+            class="calender-modal-logo"
+            src="../images/fav_icon.svg"
+            alt=""
+          />
+          <div class="modal-text3">
+            <div class="flex2">
+              <span
+                onclick="document.getElementById('calender-modal18').style.display='none'"
+                >&times;</span
+              >
+              >
+            </div>
+            <div class="modal-content">
+              <h3>Følg ASKA Stævner på Facebook</h3>
+              <div class="line5"></div>
+              <p class="modal-text-p">
+                <!--<iframe
+                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FASKA-St%25C3%25A6vne-100173745456580%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                  width="340"
+                  height="500"
+                  style="border: none; overflow: hidden"
+                  scrolling="no"
+                  frameborder="0"
+                  allowfullscreen="true"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                ></iframe>-->
+              </p>
+            </div>
+            <div class="modal-img"></div>
+          </div>
+        </div>
+        <!------  STÆVNEUDVALG -------->
+        <div class="d grid-img">
+          <button
+            onclick="document.getElementById('calender-modal19').style.display='block'"
+            class="button3"
+          >
+            Stævneudvalg
+          </button>
+        </div>
+
+        <div id="calender-modal19" class="modal">
+          <img
+            class="calender-modal-logo"
+            src="../images/fav_icon.svg"
+            alt=""
+          />
+          <div class="modal-text3">
+            <div class="flex2">
+              <span
+                onclick="document.getElementById('calender-modal19').style.display='none'"
+                >&times;</span
+              >
+            </div>
+            <div class="modal-content">
+              <h3>Stævneudvalg</h3>
+              <div class="line5"></div>
+              <p class="modal-text-p">
+                Stævneudvalget består af: <br />
+                <br />
+                • Aimie Bjørnsholm <br />
+                • Christina Jønsby <br />
+                • Lisbet B Kierkegaard <br />
+                • Louise Elgaard <br />
+                • Mathilde Ladefoged Hansen <br />
+                • Pernille Maj Svendsen <br />
+                • Siri Fog <br />
+                • Trine Mejer
+                <br /><br />
+                Du kan altid kontakte stævneudvalget på aska.staevne@gmail.com
+                eller vores FB side ASKA stævner.
+              </p>
+            </div>
+            <div class="modal-img"></div>
+          </div>
+        </div>
+        <!------  Sponsorer -------->
+        <div class="e grid-img">
+          <button
+            onclick="document.getElementById('calender-modal20').style.display='block'"
+            class="button3"
+          >
+            Sponsorer
+          </button>
+        </div>
+
+        <div id="calender-modal20" class="modal">
+          <img
+            class="calender-modal-logo"
+            src="../images/fav_icon.svg"
+            alt=""
+          />
+          <div class="modal-text3">
+            <div class="flex2">
+              <span
+                onclick="document.getElementById('calender-modal20').style.display='none'"
+                >&times;</span
+              >
+            </div>
+            <div class="modal-content">
+              <h3>Sponsorer</h3>
+              <div class="line5"></div>
+              <p class="modal-text-p">jkdsfjklæsdjf</p>
+            </div>
+            <div class="modal-img"></div>
+          </div>
+        </div>
+
+        <!------  KALENDER OG TILMELDING -------->
+        <div class="f grid-img">
+          <button
+            onclick="document.getElementById('calender-modal21').style.display='block'"
+            class="button3"
+          >
+            Kalender og tilmelding
+          </button>
+        </div>
+
+        <div id="calender-modal21" class="modal">
+          <img
+            class="calender-modal-logo"
+            src="../images/fav_icon.svg"
+            alt=""
+          />
+          <div class="modal-text3">
+            <div class="flex2">
+              <span
+                onclick="document.getElementById('calender-modal21').style.display='none'"
+                >&times;</span
+              >
+            </div>
+            <div class="modal-content">
+              <h3>Kalender og tilmelding</h3>
+              <div class="line5"></div>
+              <p class="modal-text-p">fdsfsdkofdsakfklsdakfklæsd</p>
+            </div>
+            <div class="modal-img"></div>
+          </div>
+        </div>
+
+        <!------  WEBSHOP -------->
+        <div class="g grid-img">
+          <button
+            onclick="document.getElementById('calender-modal22').style.display='block'"
+            class="button3"
+          >
+            Webshop (klubtøj)
+          </button>
+        </div>
+
+        <div id="calender-modal22" class="modal">
+          <img
+            class="calender-modal-logo"
+            src="../images/fav_icon.svg"
+            alt=""
+          />
+          <div class="modal-text3">
+            <div class="flex2">
+              <span
+                onclick="document.getElementById('calender-modal22').style.display='none'"
+                >&times;</span
+              >
+            </div>
+            <div class="modal-content">
+              <h3>Webshop (klubtøj)</h3>
+              <div class="line5"></div>
+              <p class="modal-text-p">
+                Du har mulighed for at bestille jakker, t-shirts, hoodies,
+                muleposer og meget andet fra størrelse 4år til 3XL med ASKA
+                logo.
+                <br />
+                Du kan bestille online, betale med kort og få tilsendt til en
+                pakkeshop nær dig. Så nu kan du blive ASKA-påklædt helt uden at
+                rejse dig fra sofaen. Du må selvfølgelig også gerne afhente
+                selv.
+                <br /><br />
+                <a href="https://wondersport.dk/profilshop/aska.html"
+                  ><button class="button1 green">Se her</button></a
+                >
+              </p>
+            </div>
+            <div class="modal-img"></div>
+          </div>
+        </div>
       </div>
+      <div class="whitespace"></div>
+      <div class="whitespace"></div>
     </main>
+
     <!-- ==================================== FOOTER ==================================== -->
+    <div class="greenspace"></div>
     <footer>
       <div class="flex">
         <div class="flex_content text_left_desktop">

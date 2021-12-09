@@ -73,14 +73,14 @@ h6 {
   font-family: var(--primary-heading);
   font-size: 12px;
 }
-p {
+p, ul, li {
   font-family: var(--primary-text);
   font-size: 15px;
   margin: 0;
   line-height: 25px;
 }
 @media screen and (min-width: 600px) {
-  p {
+  p, ul, li {
     font-size: 17px;
   }
 }
@@ -93,9 +93,6 @@ a {
 @media screen and (min-width: 600px) {
   a {
     font-size: 17px;
-  }
-  a:hover {
-    text-decoration: underline;
   }
 }
 .page-padding {
@@ -193,10 +190,10 @@ a {
 .button4 {
   /* kalender knapper */
   border-radius: 20px;
-  width: 180px;
-  height: 40px;
+  width: 230px;
+  height: 45px;
   font-family: var(--primary-heading);
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   box-shadow: var(--shadow);
   cursor: pointer;
@@ -204,13 +201,19 @@ a {
 @media screen and (min-width: 992px) {
   .button4 {
     border-radius: 20px;
-    width: 180px;
-    height: 45px;
-    font-size: 18px;
+    height: 50px;
+    font-size: 22px;
   }
   .button4:hover {
     background-color: var(--primary-gray);
   }
+}
+.button5 {
+  /* footer-knap */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 .green {
   color: var(--primary-white);
@@ -333,6 +336,9 @@ nav {
     margin: 0 20px 0 0;
   }
 }
+.nav-list a:hover{
+  text-decoration: underline;
+}
 .nav-link {
   font-family: var(--primary-heading);
   font-size: 1.4em;
@@ -347,6 +353,23 @@ nav {
 }
 .menu-open {
   display: block;
+}
+/* ==================================== SCROLLBAR ==================================== */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-green); 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green); 
 }
 /* ==================================== FOOTER ==================================== */
 footer {
@@ -412,6 +435,38 @@ footer {
     text-align: left;
   }
 }
+.modal-footer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  text-align: center;
+}
+.modal-text-footer{
+  background-color: var(--primary-gray);
+  height: auto;
+  width: 80%;
+  color: var(--primary-white);  
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--shadow);
+}
+.modal-footer span{
+  font-size: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 /* ==================================== HERO INDEX PAGE ==================================== */
 .frontpage-hero {
   background-position: top;
@@ -445,7 +500,7 @@ footer {
   background-image: url(../images/dias2_optimized.png);
 }
 .hero3 {
-  background-image: url(../images/dias3_optimized.jpg);
+  background-image: url(../images/img_0805_optimized.png);
 }
 .hero-wrapper {
   position: relative;
@@ -461,6 +516,11 @@ footer {
   width: 95%;
   margin: 0 auto 20px auto;
   text-shadow: var(--primary-black) 1px 0 10px;
+}
+@media screen and (min-width: 600px) {
+  .hero-text {
+    width: 65%;
+  }
 }
 .hero-section {
   height: 90vh;
@@ -525,86 +585,90 @@ footer {
     height: 100%;
   }
 }
-.reduceret-pris_img{
-width: 100%;
-} 
-.gratis-benyttelse_img{
-height: 100%;
-
-}
-.saxild_img{
-width: 100%;
-}
-.pet-house_img{
-width: 100%;
-}
-.teigar_img{
-height: 100%;
-}
-.ostanlaegget_img{
-  height: 100%;
-}
-.ostanlaegget {
-  grid-area: ostanlaegget;
-  overflow: hidden;
-}
-.container2 button {
-  z-index: 4;
-}
-.grid-img img {
-  filter: grayscale(20);
-  position: absolute;
-}
-@media screen and (min-width: 600px) {
   .ostanlaegget {
-    grid-area: ostanlaegget;
+    background-image: url(../images/ridekort-til-osteranlaegget_optimized.jpg);
   }
+  .saxild {
+    background-image: url(../images//saxild_naturfoder_optimized.png);
+  }
+  .teigar-rideudstyr {
+    background-image: url(../images/teigar_optimized.png);
+  }
+.klubdage {
+  background-image: url(../images/gratis-benyttelse-af-faciliteter_optimized.jpg);
 }
-.teigar-rideudstyr {
-  grid-area: teigar-rideudstyr;
-  overflow: hidden;
+.staevner {
+  background-image: url(../images/om-aska-staevner_optimized.jpg);
 }
-@media screen and (min-width: 600px) {
+.pet-house {
+background-image: url(../images/pethouse_optimized.png);
+}
+.grid-overlay {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: grayscale(20);
+}
+  .container2 button {
+    z-index: 4;
+    transition: all 0.8s ease-in-out;
+  }
+
+  @media screen and (min-width: 992px) {
+    .container2 button:hover {
+      height: 100%;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .ostanlaegget {
+      grid-area: ostanlaegget;
+    }
+  }
   .teigar-rideudstyr {
     grid-area: teigar-rideudstyr;
   }
-}
-.klubdage {
-  grid-area: klubdage;
-  overflow: hidden;
-}
-@media screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
+    .teigar-rideudstyr {
+      grid-area: teigar-rideudstyr;
+    }
+  }
   .klubdage {
     grid-area: klubdage;
+    overflow: hidden;
   }
-}
-.staevner {
-  grid-area: staevner;
-  overflow: hidden;
-}
-@media screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
+    .klubdage {
+      grid-area: klubdage;
+    }
+  }
   .staevner {
     grid-area: staevner;
+    overflow: hidden;
   }
-}
-.pet-house {
-  grid-area: pet-house;
-  overflow: hidden;
-}
-@media screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
+    .staevner {
+      grid-area: staevner;
+    }
+  }
   .pet-house {
     grid-area: pet-house;
+    overflow: hidden;
   }
-}
-.saxild {
-  grid-area: saxild;
-  overflow: hidden;
-}
-@media screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
+    .pet-house {
+      grid-area: pet-house;
+    }
+  }
   .saxild {
     grid-area: saxild;
+    overflow: hidden;
   }
-}
+  @media screen and (min-width: 600px) {
+    .saxild {
+      grid-area: saxild;
+    }
+  }
 .modal {
   width: 100%;
   height: 100%;
@@ -627,6 +691,7 @@ height: 100%;
   margin: 50% auto;
   color: var(--primary-white);
   padding-bottom: 15px;
+  box-shadow: var(--shadow);
 }
 @media screen and (min-width: 600px) {
   .modal-text {
@@ -636,8 +701,13 @@ height: 100%;
   }
 }
 .modal-text-p {
-  overflow: scroll;
-  height: 200px;
+  overflow-y: scroll;
+  height: 300px;
+}
+@media screen and (min-width: 600px) {
+  .modal-text-p{
+    height: 400px;
+  }
 }
 .modal span {
   font-size: 50px;
@@ -700,9 +770,6 @@ height: 100%;
   }
 }
 .button-section::-webkit-scrollbar {
-  display: none;
-}
-.modal::-webkit-scrollbar {
   display: none;
 }
 /* ==================================== HURTIG LINKS SECTION INDEX PAGE ==================================== */
@@ -769,7 +836,7 @@ height: 100%;
   text-align: center;
   width: 90%;
   padding: 10px;
-  margin: 40px auto 15px auto;
+  margin: 40px auto 40px auto;
   box-shadow: var(--shadow);
   background-color: var(--secondary-gray);
   grid-column: 1;
@@ -959,6 +1026,7 @@ height: 100%;
   border-radius: 20px;
   border: 5px solid var(--primary-green);
   grid-row: 2/3;
+  box-shadow: var(--shadow);
 }
 @media screen and (min-width: 600px) {
   .modal-text2 {
@@ -1095,6 +1163,37 @@ height: 100%;
   color: var(--primary-white);
 }
 /* ==================================== CONTAINER3 SECTION ==================================== */
+.ul-dots{
+  list-style: inside disc;
+}
+.section-button{
+  margin: 10px auto 0 auto;
+  width: 240px;
+  display: block;
+}
+.bestyrelse-img{
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .bestyrelse-img{
+    width: 80%;
+  }
+}
+@media screen and (min-width: 600px) {
+.bestyrelse-grid{
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "bestyrelses-grid-one bestyrelses-grid-two";
+}
+.bestyrelse-grid-one{
+  grid-area: bestyrelses-grid-one;
+}
+.bestyrelse-grid-two{
+  grid-area: bestyrelses-grid-two;
+}
+}
 .container3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1181,6 +1280,7 @@ width: 100%;
   top: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
+  box-shadow: var(--shadow);
 }
 @media screen and (min-width: 992px) {
   .modal-text3 {
@@ -1193,7 +1293,7 @@ width: 100%;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  width: 80%;
+  max-width: 1050px;
   height: 60vh;
   gap: 20px 20px;
   grid-auto-flow: row;
@@ -1317,4 +1417,359 @@ background-position-y: 30%;
   rgba(0, 0, 0, 0)
 );
 background-position-y: 65%;
+}
+/*--bliv en del af aska --*/
+.bliv-en-del-af-aska .a{
+  background-image: url(../images/bliv-medlem_optimized.jpg);
+}
+.bliv-en-del-af-aska .b{
+  background-image: url(../images/aska-medlemmer_optimized.jpg);
+}
+.bliv-en-del-af-aska .c{
+  background-image: url(../images/bliv-staldambassador_optimized.jpg);
+}
+.bliv-en-del-af-aska .d{
+  background-image: url(../images/tilmeld-nyhedsbrev_optimized.jpg);
+}
+.bliv-en-del-af-aska .e{
+  background-image: url(../images/bliv-frivillig_optimized.jpg);
+}
+.bliv-en-del-af-aska .f{
+  background-image: url(../images/bliv-sponsor_optimized.jpg);
+}
+.bliv-en-del-af-aska .g{
+  background-image: url(../images/webshop_optimized.jpg);
+  background-position-y: 39%;
+}
+#calender-modal9 .modal-img{
+  mask-image: url(../images/bliv-medlem_optimized.jpg);
+  background-image: url(../images/bliv-medlem_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 20%;
+}
+#calender-modal10 .modal-img{
+  mask-image: url(../images/aska-medlemmer_optimized.jpg);
+  background-image: url(../images/aska-medlemmer_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 50%;
+}
+#calender-modal11 .modal-img{
+  mask-image: url(../images/bliv-staldambassador_optimized.jpg);
+  background-image: url(../images/bliv-staldambassador_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 50%;
+}
+#calender-modal12 .modal-img{
+  mask-image: url(../images/tilmeld-nyhedsbrev_optimized.jpg);
+  background-image: url(../images/tilmeld-nyhedsbrev_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 60%;
+}
+#calender-modal13 .modal-img{
+  mask-image: url(../images/bliv-frivillig_optimized.jpg);
+  background-image: url(../images/bliv-frivillig_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 55%;
+}
+#calender-modal14 .modal-img{
+  mask-image: url(../images/bliv-sponsor_optimized.jpg);
+  background-image: url(../images/bliv-sponsor_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 58%;
+}
+#calender-modal15 .modal-img{
+  mask-image: url(../images/webshop_optimized.jpg);
+  background-image: url(../images/webshop_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 33%;
+}
+/*-- aska stævner --*/
+.aska-staevner .a{
+  background-image: url(../images/om-aska-staevner_optimized.jpg);
+}
+.aska-staevner .b{
+  background-image: url(../images/kontakt_staevneudvalg_optimized.jpg);
+}
+.aska-staevner .c{
+  background-image: url(../images/);
+}
+@media screen and (min-width: 600px) {
+.aska-staevner .c{
+  height: 130px;
+}}
+.aska-staevner .d{
+  background-image: url(../images/staevneudvalg_optimized.jpg);
+}
+.aska-staevner .e{
+  background-image: url(../images/sponsorer_optimized.jpg);
+}
+.aska-staevner .f{
+  background-image: url(../images/kalender-og-tilmelding_optimized.jpg);
+}
+.aska-staevner .g{
+  background-image: url(../images/webshop_optimized.jpg);
+  background-position-y: 39%;
+}
+#calender-modal16 .modal-img{
+  mask-image: url(../images/om-aska-staevner_optimized.jpg);
+  background-image: url(../images/om-aska-staevner_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 16%;
+}
+#calender-modal17 .modal-img{
+  mask-image: url(../images/kontakt_staevneudvalg_optimized.jpg);
+  background-image: url(../images/kontakt_staevneudvalg_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 49%;
+}
+#calender-modal18 .modal-img{
+  mask-image: url(../images/);
+  background-image: url(../images);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 16%;
+}
+#calender-modal19 .modal-img{
+  mask-image: url(../images/staevneudvalg_optimized.jpg);
+  background-image: url(../images/staevneudvalg_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 22%;
+}
+#calender-modal20 .modal-img{
+  mask-image: url(../images/sponsorer_optimized.jpg);
+  background-image: url(../images/sponsorer_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 78%;
+}
+#calender-modal21 .modal-img{
+  mask-image: url(../images/kalender-og-tilmelding_optimized.jpg);
+  background-image: url(../images/kalender-og-tilmelding_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 45%;
+}
+#calender-modal22 .modal-img{
+  mask-image: url(../images/webshop_optimized.jpg);
+  background-image: url(../images/webshop_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 33%;
+}
+.fb-page-widget{
+  height: 100%;
+  width: 100%;
+}
+.mobile-widget {
+  display: block;
+}
+.desktop-widget{
+  display: none;
+}
+@media (min-width: 600px){
+.mobile-widget {
+  display: none;
+}
+.desktop-widget{
+  display: block
+}}
+/*-- aska ungdom --*/
+.aska-ungdom .a{
+  background-image: url(../images/bliv-medlem_optimized.jpg);
+}
+.aska-ungdom .b{
+  background-image: url(../images/til-foraeldre_optimized.jpg);
+}
+.aska-ungdom .c{
+  background-image: url(../images/om-aska-ungdom_optimized.jpg);
+}
+.aska-ungdom .d{
+  background-image: url(../images/undervisning-og-laering_optimized.jpg);
+}
+.aska-ungdom .e{
+  background-image: url(../images/faellesskab_optimized.jpg);
+}
+.aska-ungdom .f{
+  background-image: url(../images/junior-og-ungdomsudvalg_optimized.jpg);
+}
+.aska-ungdom .g{
+  background-image: url(../images/webshop_optimized.jpg);
+}
+#calender-modal23 .modal-img{
+  mask-image: url(../images/bliv-medlem_optimized.jpg);
+  background-image: url(../images/bliv-medlem_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 20%;
+}
+#calender-modal24 .modal-img{
+  mask-image: url(../images/til-foraeldre_optimized.jpg);
+  background-image: url(../images/til-foraeldre_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 53%;
+}
+#calender-modal25 .modal-img{
+  mask-image: url(../images/om-aska-ungdom_optimized.jpg);
+  background-image: url(../images/om-aska-ungdom_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 43%;
+}
+#calender-modal26 .modal-img{
+  mask-image: url(../images/undervisning-og-laering_optimized.jpg);
+  background-image: url(../images/undervisning-og-laering_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 43%;
+}
+#calender-modal27 .modal-img{
+  mask-image: url(../images/faellesskab_optimized.jpg);
+  background-image: url(../images/faellesskab_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 33%;
+}
+#calender-modal28 .modal-img{
+  mask-image: url(../images/junior-og-ungdomsudvalg_optimized.jpg);
+  background-image: url(../images/junior-og-ungdomsudvalg_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 48%;
+}
+#calender-modal29 .modal-img{
+  mask-image: url(../images/webshop_optimized.jpg);
+  background-image: url(../images/webshop_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 33%;
+}
+/*--- ASKA TURE ---*/
+.aska-ture{
+  height: 80vh;
+}
+.ture-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 0 auto;
+  padding: 0 15px;
+  grid-template-areas: "ture-grid-one ture-grid-two";
+}
+.ture-grid-one{
+  grid-area: ture-grid-one;
+  width: 95%;
+  margin-right: 5%;
+  background-image: url(../images/20210919_132804_optimized.jpg)
+}
+.ture-grid-two{
+  grid-area: ture-grid-two;
+  width: 95%;
+  margin-left: 5%;
+  background-image: url(../images/20190422_194258_optimized.jpg)
+}
+#calender-modal30 .modal-img{
+  mask-image: url(../images/20210919_132804_optimized.jpg);
+  background-image: url(../images/20210919_132804_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 53%;
+}
+#calender-modal31 .modal-img{
+  mask-image: url(../images/20190422_194258_optimized.jpg);
+  background-image: url(../images/20190422_194258_optimized.jpg);
+  -webkit-mask-image: -webkit-linear-gradient(
+  bottom,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)
+);
+background-position-y: 46%;
+}
+@media (min-width: 600px){
+  .ture-grid{
+  height: 275px;
+  max-width: 1050px;
+}
+.ture-grid-one{
+  margin: 0;
+}
+.ture-grid-two{
+ margin: 0;
+}
 }
